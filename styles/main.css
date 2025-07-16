@@ -52,13 +52,12 @@
   font-weight: normal;
   font-style: normal;
 }
-.main-button {
+.main-button, .black-button {
   border-radius: 50px;
   padding: 20px 28px;
   font-family: "AA Stetica", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  background: #E21F2F;
   color: #FFFFFF;
   border-style: unset;
   transition: 0.2s ease-out;
@@ -68,9 +67,25 @@
   align-items: center;
   gap: 10px;
 }
+.main-button.round, .black-button.round {
+  padding: 20px;
+}
 
+.main-button {
+  background: #E21F2F;
+}
 .main-button:hover {
   box-shadow: 0 8px 20px 0 rgba(226, 31, 47, 0.3);
+}
+
+.black-button {
+  background: #171819;
+}
+.black-button:hover {
+  background: rgb(46, 47, 49);
+}
+.black-button.disabled {
+  display: none;
 }
 
 html, body {
@@ -200,14 +215,14 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   color: #FFFFFF;
 }
 
-.main-start {
+.start {
   background: url("../assets/img/main-start-bg.png") center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.main-start .main-start__container {
+.start .start__container {
   padding: 106px 94px 40px;
   display: flex;
   flex-direction: column;
@@ -215,12 +230,12 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 1600px;
   width: 100%;
 }
-.main-start .main-start__container .main-start__title {
+.start .start__container .start__title {
   display: flex;
   flex-direction: column;
   gap: 26px;
 }
-.main-start .main-start__container .main-start__title p {
+.start .start__container .start__title p {
   font-family: "AA Stetica", sans-serif;
   font-size: 52px;
   font-weight: 900;
@@ -229,16 +244,16 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 700px;
   color: #2E3136;
 }
-.main-start .main-start__container .main-start__title span {
+.start .start__container .start__title span {
   text-decoration: underline;
   text-decoration-color: #E21F2F;
 }
-.main-start .main-start__container .main-start__blocks {
+.start .start__container .start__blocks {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.main-start .main-start__container .main-start__blocks .main-start__block {
+.start .start__container .start__blocks .start__block {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,12 +261,12 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   background: #FFFFFF;
   position: relative;
 }
-.main-start .main-start__container .main-start__blocks .main-start__block svg {
+.start .start__container .start__blocks .start__block svg {
   position: absolute;
   top: -16px;
   left: 24px;
 }
-.main-start .main-start__container .main-start__blocks .main-start__block p {
+.start .start__container .start__blocks .start__block p {
   font-family: "AA Stetica", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -259,13 +274,13 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   color: #2E3136;
 }
 
-.main-about {
+.about {
   background: #F4F5F6;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.main-about .main-about__container {
+.about .about__container {
   padding: 120px 94px 112px;
   display: flex;
   flex-direction: column;
@@ -274,18 +289,18 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 1600px;
   width: 100%;
 }
-.main-about .main-about__container .main-about__title {
+.about .about__container .about__title {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 44px;
   font-weight: 700;
 }
 @media screen and (max-width: 600px) {
-  .main-about .main-about__container .main-about__title {
+  .about .about__container .about__title {
     font-size: 30px;
   }
 }
-.main-about .main-about__container .main-about__our-mission {
+.about .about__container .about__our-mission {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -297,35 +312,34 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   position: relative;
   background: #FFFFFF;
 }
-.main-about .main-about__container .main-about__our-mission .main-about__our-mission_title {
+.about .about__container .about__our-mission .about__our-mission_title {
   font-family: "AA Stetica", sans-serif;
   font-size: 24px;
   line-height: 140%;
   color: #2E3136;
 }
-.main-about .main-about__container .main-about__our-mission .main-about__our-mission_text {
+.about .about__container .about__our-mission .about__our-mission_text {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  line-height: 120%;
   color: #2E3136;
   line-height: 140%;
   text-align: center;
 }
-.main-about .main-about__container .main-about__our-mission img {
+.about .about__container .about__our-mission .quotation-first, .about .about__container .about__our-mission .quotation-second {
   position: absolute;
 }
-.main-about .main-about__container .main-about__our-mission .quotation-first {
+.about .about__container .about__our-mission .quotation-first {
   top: -46px;
   left: 42px;
 }
-.main-about .main-about__container .main-about__our-mission .quotation-second {
+.about .about__container .about__our-mission .quotation-second {
   bottom: -46px;
   right: 42px;
   rotate: 180deg;
 }
-.main-about .main-about__container .main-about__info {
+.about .about__container .about__info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -333,41 +347,396 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   gap: 28px;
   margin-top: 72px;
 }
-.main-about .main-about__container .main-about__info .main-about__info-top-item {
+.about .about__container .about__info .about__info-top-item {
   display: flex;
   gap: 28px;
 }
-.main-about .main-about__container .main-about__info .main-about__info-top-item .main-about__info-left-photo {
+.about .about__container .about__info .about__info-top-item .about__info-left-photo {
   max-width: 692px;
   width: 100%;
   max-height: 414px;
   height: 100%;
   position: relative;
 }
-.main-about .main-about__container .main-about__info .main-about__info-top-item .main-about__info-left-photo:before {
+.about .about__container .about__info .about__info-top-item .about__info-left-photo:before {
   content: "";
-  background: linear-gradient(270deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
   position: absolute;
   width: 100%;
   height: 100%;
+  background: linear-gradient(270deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
 }
-.main-about .main-about__container .main-about__info .main-about__info-top-item .main-about__info-right-text {
+.about .about__container .about__info .about__info-top-item .about__info-right-text {
   display: flex;
   flex-direction: column;
   gap: 28px;
   padding: 40px 40px 40px 0;
 }
-.main-about .main-about__container .main-about__info .main-about__info-top-item .main-about__info-right-text .right-text__title, .main-about .main-about__container .main-about__info .main-about__info-top-item .main-about__info-right-text .right-text__text {
+.about .about__container .about__info .about__info-top-item .about__info-right-text .right-text__title, .about .about__container .about__info .about__info-top-item .about__info-right-text .right-text__text {
   color: #171819;
   font-family: "AA Stetica", sans-serif;
   font-size: 20px;
   line-height: 140%;
 }
-.main-about .main-about__container .main-about__info .main-about__info-top-item .main-about__info-right-text .right-text__title {
+.about .about__container .about__info .about__info-top-item .about__info-right-text .right-text__title {
   font-weight: 700;
 }
-.main-about .main-about__container .main-about__info .main-about__info-top-item, .main-about .main-about__container .main-about__info .main-about__info-item {
+.about .about__container .about__info .about__info-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.about .about__container .about__info .about__info-items .about__info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  width: 100%;
+  max-width: 692px;
+}
+.about .about__container .about__info .about__info-items .about__info-item-title {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 140%;
+  color: #171819;
+}
+.about .about__container .about__info .about__info-items .about__info-item-text {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  color: #171819;
+  line-height: 24px;
+}
+.about .about__container .about__info .about__info-top-item, .about .about__container .about__info .about__info-item {
   background: #FFFFFF;
+}
+
+.services {
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.services__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 58px;
+  max-width: 1600px;
+  width: 100%;
+  padding: 120px 94px;
+}
+.services__container .services__title {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 120%;
+}
+@media screen and (max-width: 600px) {
+  .services__container .services__title {
+    font-size: 30px;
+  }
+}
+.services__container .services__item {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.services__container .services__item .services__item-img {
+  position: relative;
+  max-width: 706px;
+  max-height: 344px;
+}
+.services__container .services__item .services__item-img:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
+}
+.services__container .services__item .services__item-img:nth-child(2):before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
+}
+.services__container .services__item .services__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.services__container .services__item .services__item-info .services__item-title {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 140%;
+  color: #171819;
+}
+.services__container .services__item .services__item-info .services__item-text {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  line-height: 160%;
+  color: #171819;
+}
+
+.guarantees {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F4F5F6;
+}
+.guarantees .guarantees__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 52px;
+  width: 100%;
+  max-width: 1600px;
+  padding: 120px 94px;
+}
+.guarantees .guarantees__container .guarantees__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.guarantees .guarantees__container .guarantees__title .guarantees__main-title {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 120%;
+  color: #2E3136;
+}
+@media screen and (max-width: 600px) {
+  .guarantees .guarantees__container .guarantees__title .guarantees__main-title {
+    font-size: 30px;
+  }
+}
+.guarantees .guarantees__container .guarantees__title .guarantees__subtitle {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 24px;
+  line-height: 140%;
+  color: #2E3136;
+}
+.guarantees .guarantees__container .guarantees__items {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  background: #FFFFFF;
+  padding: 28px;
+  max-width: 309px;
+  width: 100%;
+  cursor: pointer;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item .guarantees__item-title {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  line-height: 160%;
+  font-weight: 700;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item svg {
+  color: #E21F2F;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item .guarantees__item-text {
+  display: none;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item.active {
+  max-width: 426px;
+  background: #E21F2F;
+  height: 285px;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item.active .guarantees__item-title {
+  font-size: 28px;
+  line-height: 160%;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item.active svg {
+  color: #FFFFFF;
+  width: 78px;
+  height: 78px;
+}
+.guarantees .guarantees__container .guarantees__items .guarantees__item.active .guarantees__item-text {
+  display: block;
+  color: #FFFFFF;
+}
+
+.work-stages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+}
+.work-stages .work-stages__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 51px;
+  width: 100%;
+  max-width: 1600px;
+  padding: 100px 94px 120px;
+}
+.work-stages .work-stages__container .work-stages__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.work-stages .work-stages__container .work-stages__title h1 {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+}
+@media screen and (max-width: 600px) {
+  .work-stages .work-stages__container .work-stages__title h1 {
+    font-size: 30px;
+  }
+}
+.work-stages .work-stages__container .work-stages__title p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 24px;
+  line-height: 140%;
+}
+.work-stages .work-stages__container .work-stages__cases {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  width: 100%;
+}
+.work-stages .work-stages__container .work-stages__cases .cases__car-stages {
+  display: flex;
+  padding: 0 40px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.work-stages .work-stages__container .work-stages__cases .cases__car-stages:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 3px;
+  background: #E7EAED;
+  z-index: 0;
+}
+.work-stages .work-stages__container .work-stages__cases .cases__car-stages .cases__circle {
+  width: 20px;
+  height: 20px;
+  background: #E21F2F;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+.work-stages .work-stages__container .work-stages__cases .cases__car-stages .cases__car {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  transition: 0.2s ease-in;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case {
+  display: flex;
+  gap: 28px;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case.disabled {
+  display: none;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__img {
+  width: 452px;
+  height: 301px;
+  position: relative;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__img:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__img img {
+  width: 100%;
+  height: 100%;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info {
+  width: 100%;
+  max-width: 932px;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  line-height: 160%;
+  color: #2E3136;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div .case__step {
+  padding: 12px;
+  background: #E21F2F;
+  width: fit-content;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 0.7;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div h1 {
+  font-size: 28px;
+  font-family: "AA Stetica", sans-serif;
+  font-weight: 700;
+  line-height: 140%;
+  color: #2E3136;
+}
+.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__nav-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.our-cases {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F4F5F6;
+}
+.our-cases .our-cases__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 51px;
+  width: 100%;
+  max-width: 1600px;
+  padding: 120px 94px 142px;
 }
 
 /*# sourceMappingURL=main.css.map */

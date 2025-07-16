@@ -1,3 +1,5 @@
+// npx sass --watch styles/main.sass css/main.css
+
 $font-path: "../assets/fonts"
 
 // Fonts import
@@ -20,6 +22,10 @@ $font-path: "../assets/fonts"
 @include font("AA Stetica", "AA Stetica Regular", normal, normal)
 
 @mixin linear-bg($deg)
+  content: ""
+  position: absolute
+  width: 100%
+  height: 100%
   background: linear-gradient($deg, rgba(226, 31, 47, 0.5),rgba(226, 31, 47, 0) 100%)
 
 @mixin main-title()
@@ -36,7 +42,6 @@ $font-path: "../assets/fonts"
   font-family: "AA Stetica", sans-serif
   font-size: 32px
   font-weight: 700
-  line-height: 120%
 
 @mixin text-16()
   font-family: "AA Stetica", sans-serif
@@ -60,12 +65,11 @@ $main-text: #2E3136
 $main-black: #171819
 $white: #FFFFFF
 
-.main-button
+.main-button, .black-button
   border-radius: 50px
   padding: 20px 28px
   @include text-16()
   font-weight: 500
-  background: $main-color
   color: $white
   border-style: unset
   transition: .2s ease-out
@@ -77,9 +81,24 @@ $white: #FFFFFF
   align-items: center
   gap: 10px
 
-.main-button:hover
+  &.round
+    padding: 20px
+
+.main-button
+  background: $main-color
+
+  &:hover
     box-shadow: 0 8px 20px 0 rgba(226, 31, 47, 0.3)
 
+
+.black-button
+  background: $main-black
+
+  &:hover
+    background: rgb(46, 47, 49)
+
+  &.disabled
+    display: none
 
 html, body
   padding: 0
