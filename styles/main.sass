@@ -7,7 +7,7 @@
   flex-direction: column
   align-items: center
 
-  .start__container
+  &__container
     padding: 106px 94px 40px
 
     display: flex
@@ -22,7 +22,7 @@
       flex-direction: column
       gap: 26px
 
-      p
+      h1
         font-family: "AA Stetica", sans-serif
         font-size: 52px
         font-weight: 900
@@ -70,7 +70,7 @@
   flex-direction: column
   align-items: center
 
-  .about__container
+  &__container
     padding: 120px 94px 112px
     display: flex
     flex-direction: column
@@ -79,7 +79,7 @@
     max-width: 1600px
     width: 100%
 
-    .about__title
+    h2
       @include index.main-title
 
     .about__our-mission
@@ -96,12 +96,13 @@
 
       background: index.$white
 
-      .about__our-mission_title
+      h3
         @include index.text-24
+        font-weight: 400
         line-height: 140%
         color: index.$main-text
 
-      .about__our-mission_text
+      p
         @include index.sub-title
         color: index.$main-text
         line-height: 140%
@@ -148,12 +149,12 @@
           gap: 28px
           padding: 40px 40px 40px 0
 
-          .right-text__title, .right-text__text
+          h4, p
             color: index.$main-black
             @include index.text-20
             line-height: 140%
 
-          .right-text__title
+          h4
             font-weight: 700
 
       .about__info-items
@@ -171,13 +172,12 @@
           width: 100%
           max-width: 692px
 
-
-          &-title
+          h4
             @include index.sub-title
             line-height: 140%
             color: index.$main-black
 
-          &-text
+          p
             @include index.text-16
             color: index.$main-black
             line-height: 24px
@@ -204,7 +204,7 @@
 
     padding: 120px 94px
 
-    .services__title
+    h2
       @include index.main-title
       line-height: 120%
 
@@ -229,12 +229,12 @@
         flex-direction: column
         gap: 20px
 
-        .services__item-title
+        h3
           @include index.sub-title
           line-height: 140%
           color: index.$main-black
 
-        .services__item-text
+        p
           @include index.text-20
           line-height: 160%
           color: index.$main-black
@@ -246,7 +246,7 @@
   align-items: center
   background: index.$main-bg
 
-  .guarantees__container
+  &__container
     display: flex
     flex-direction: column
     align-items: center
@@ -264,12 +264,12 @@
       align-items: center
       gap: 12px
 
-      .guarantees__main-title
+      h2
         @include index.main-title
         line-height: 120%
         color: index.$main-text
 
-      .guarantees__subtitle
+      p
         @include index.text-24
         line-height: 140%
         color: index.$main-text
@@ -278,6 +278,7 @@
       display: flex
       gap: 20px
       width: 100%
+      min-height: 285px
 
       .guarantees__item
         display: flex
@@ -292,7 +293,9 @@
 
         cursor: pointer
 
-        .guarantees__item-title
+        max-height: 259px
+
+        h3
           @include index.text-20
           line-height: 160%
           font-weight: 700
@@ -300,17 +303,19 @@
         svg
           color: index.$main-color
 
-        .guarantees__item-text
+        p
           display: none
           @include index.text-16
           line-height: 24px
 
-      .guarantees__item.active
+      .guarantees__item:hover
         max-width: 426px
         background: index.$main-color
         height: 285px
+        max-height: 285px
+        transition: .1s linear
 
-        .guarantees__item-title
+        h3
           font-size: 28px
           line-height: 160%
           font-weight: 700
@@ -321,8 +326,7 @@
           width: 78px
           height: 78px
 
-
-        .guarantees__item-text
+        p
           display: block
           color: index.$white
 
@@ -333,7 +337,7 @@
   align-items: center
   background: index.$white
 
-  .work-stages__container
+  &__container
     display: flex
     flex-direction: column
     align-items: center
@@ -351,7 +355,7 @@
       align-items: center
       gap: 14px
 
-      h1
+      h2
         @include index.main-title
 
       p
@@ -448,7 +452,7 @@
                 text-transform: uppercase
                 color: index.$white
 
-              h1
+              h3
                 font-size: 28px
                 font-family: "AA Stetica", sans-serif
                 font-weight: 700
@@ -467,7 +471,7 @@
   align-items: center
   background: index.$main-bg
 
-  .our-cases__container
+  &__container
     display: flex
     flex-direction: column
     align-items: center
@@ -478,3 +482,478 @@
     max-width: 1600px
 
     padding: 120px 94px 142px
+
+    .our-cases__title
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 12px
+
+      h2
+        @include index.main-title
+        line-height: 120%
+
+      p
+        @include index.text-24
+        line-height: 140%
+        color: index.$main-text
+
+    .our-cases__cases
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 32px
+
+      .our-cases__choose
+        display: flex
+        gap: 16px
+
+        .choose
+          padding: 16px 20px
+          cursor: pointer
+          @include index.text-16
+          font-weight: 500
+          line-height: 130%
+          background: index.$white
+          color: index.$main-black
+          box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+          transition: .1s linear
+          user-select: none
+
+          &.active
+            background: index.$main-color
+            color: index.$white
+            box-shadow: none
+
+      .our-cases__case
+        display: none
+        gap: 28px
+
+        &.active
+          display: flex
+
+        .case__left
+          display: flex
+          flex-direction: column
+          gap: 32px
+
+          .case__carousel
+            width: 100%
+            max-width: 452px
+            height: fit-content
+            display: flex
+            flex-direction: column
+            gap: 12px
+            position: relative
+
+            .main-image
+              width: 452px
+              height: 375px
+
+              position: relative
+
+              &:hover .full-image
+
+                img
+                  opacity: 1
+                  backdrop-filter: blur(11px) opacity(1)
+
+              &:before
+                content: ""
+                position: absolute
+                @include index.linear-bg(270deg)
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                z-index: 1
+
+              & > img
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+              .full-image
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+                z-index: 2
+                transition: .2s linear
+
+                img
+                  opacity: 0
+                  padding: 33px
+                  backdrop-filter: blur(11px) opacity(0)
+                  background: rgba(0, 0, 0, 0.27)
+                  border-radius: 50%
+                  border: 1px solid rgba(255, 255, 255, 0.1)
+                  cursor: pointer
+                  transition: .2s linear
+
+            .thumbnails-wrapper
+              width: 100%
+              max-width: 452px
+              overflow-x: auto
+              overflow-y: hidden
+              position: relative
+              padding-bottom: 1px
+
+              &::-webkit-scrollbar
+                width: 15px
+                height: 5px
+                background: #F6F9FA
+                border-radius: 10px
+
+              &::-webkit-scrollbar-thumb
+                background: index.$main-color
+                border-radius: 10px
+
+              &::-webkit-scrollbar-thumb:hover
+                box-shadow: 0 8px 20px 0 rgba(226, 31, 47, 0.3)
+
+              .thumbnails
+                display: flex
+                gap: 16px
+
+                .thumbnail
+                  width: 78px
+                  height: 58px
+                  cursor: pointer
+
+                  & img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    border: 2px solid transparent
+                    opacity: .5
+                    transition: .2s ease-out
+
+                  &.active img
+                    border: 2px solid index.$main-color
+                    opacity: 1
+
+            .full-image-show
+              display: none
+              justify-content: center
+              align-items: center
+              position: fixed
+              top: 0
+              left: 0
+              width: 100%
+              height: 100%
+              background: rgba(23, 24, 25, 0.35)
+              z-index: 5
+
+              &.active
+                display: flex
+
+              .full-image__inspect
+                width: 100%
+                max-width: 960px
+
+              .close-zoom
+                position: absolute
+                top: 24px
+                right: 24px
+                cursor: pointer
+                color: index.$white
+                background: index.$main-color
+                border-radius: 50%
+
+          .main-button
+            width: 100%
+            justify-content: center
+
+        .case__right
+          display: flex
+          flex-direction: column
+          gap: 20px
+
+          h3
+            @include index.sub-title
+            line-height: 140%
+
+          ul
+            display: flex
+            flex-direction: column
+            gap: 16px
+
+            li
+              display: flex
+              flex-direction: column
+              gap: 8px
+              padding-left: 32px
+              position: relative
+
+              &:before
+                content: url("../assets/svg/cases-check.svg")
+                position: absolute
+                left: 0
+                top: 4px
+                width: 24px
+                height: 24px
+
+              h4
+                @include index.text-20
+                color: index.$main-text
+                line-height: 160%
+
+              p
+                @include index.text-16
+                line-height: 24px
+                color: index.$main-text
+
+
+.under-key
+  display: flex
+  flex-direction: column
+  align-items: center
+  background: index.$white
+
+  &__container
+    display: flex
+    gap: 28px
+
+    width: 100%
+    max-width: 1600px
+
+    padding: 60px 94px
+
+    .under-key__left
+      display: flex
+      flex-direction: column
+      gap: 20px
+      max-width: 692px
+
+      h2
+        @include index.main-title
+        line-height: 120%
+
+      span
+        color: index.$main-color
+
+      p
+        @include index.text-20
+        line-height: 160%
+        color: index.$main-text
+
+        &.strong
+          font-weight: 700
+
+    .under-key__right
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      position: relative
+
+      .right__img
+        width: 100%
+        height: 100%
+        max-width: 692px
+        max-height: 372px
+        position: relative
+
+        &:before
+          @include index.linear-bg(90deg)
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+      .manager
+        position: absolute
+        max-width: 437px
+        bottom: -60px
+
+
+.faq
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 52px
+
+    max-width: 1600px
+    width: 100%
+
+    padding: 120px 94px
+
+    .faq__title
+      display: flex
+      flex-direction: column
+      gap: 14px
+
+      h2
+        @include index.main-title
+        line-height: 120%
+
+      p
+        @include index.text-24
+        line-height: 140%
+        color: index.$main-text
+
+    .faq__content
+      display: flex
+      gap: 28px
+      width: 100%
+
+      .faq__questions
+        display: flex
+        flex-direction: column
+        gap: 20px
+        width: 100%
+
+        .faq__question
+          display: flex
+          flex-direction: column
+          padding: 28px
+          background: index.$white
+          width: 100%
+
+          &.active .plus
+            rotate: 45deg
+            color: index.$main-color
+
+          &.active .answer
+            max-height: 600px
+
+          &-title
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 20px
+
+            h3
+              @include index.text-20
+              color: index.$main-text
+              line-height: 160%
+
+            .plus
+              overflow: unset
+              color: #9DA2A7
+              transition: .1s ease-out
+
+              cursor: pointer
+
+              &:hover
+                color: index.$main-color
+
+          .answer
+            max-height: 0
+            display: flex
+            flex-direction: column
+            gap: 8px
+            overflow: hidden
+            transition: .3s linear
+
+            h4
+              padding-top: 19px
+              @include index.text-24
+              color: index.$main-text
+              line-height: 24px
+
+            p, li
+              @include index.text-16
+              color: index.$main-text
+              line-height: 24px
+
+
+.contacts
+  background: index.$white
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    display: flex
+    gap: 29px
+
+    max-width: 1600px
+    width: 100%
+
+    padding: 120px 94px
+
+    .contacts-cards
+      display: flex
+      gap: 40px
+
+      .contacts-card
+        display: flex
+        gap: 16px
+        align-items: center
+
+        .card__img-box
+          padding: 13px
+          background: index.$main-black
+          display: flex
+
+        .card__content
+          display: flex
+          flex-direction: column
+          gap: 4px
+
+          p
+            @include index.text-16
+            color: index.$main-text
+            line-height: 24px
+
+            &.strong
+              font-weight: 700
+
+    .contacts__left
+      display: flex
+      flex-direction: column
+      gap: 48px
+
+      .contacts__info
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+        h2
+          @include index.main-title
+          line-height: 120%
+
+        p
+          @include index.text-20
+          line-height: 160%
+          color: index.$main-text
+
+    .contacts__right
+      display: flex
+      justify-content: center
+      align-items: center
+
+      .map
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
+
+        &:before
+          @include index.linear-bg(360deg)
+          height: 40%
+          bottom: 0
+          pointer-events: none
+
+      .contacts-cards
+        padding: 20px
+        gap: 20px
+        background: index.$white
+        width: calc(100% - 40px)
+
+        position: absolute
+        bottom: 20px

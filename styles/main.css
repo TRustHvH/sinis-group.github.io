@@ -66,6 +66,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  user-select: none;
 }
 .main-button.round, .black-button.round {
   padding: 20px;
@@ -79,7 +80,7 @@
 }
 
 .black-button {
-  background: #171819;
+  background: rgb(23, 24, 25);
 }
 .black-button:hover {
   background: rgb(46, 47, 49);
@@ -104,7 +105,7 @@ body {
   box-sizing: border-box;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, ul, li {
   padding: 0;
   margin: 0;
 }
@@ -113,8 +114,12 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 header {
-  background: #171819;
+  background: rgb(23, 24, 25);
   display: flex;
   justify-content: center;
 }
@@ -215,6 +220,152 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   color: #FFFFFF;
 }
 
+.call {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 24, 25, 0.35);
+  transition: 0.2s ease-out;
+}
+.call.active {
+  display: flex;
+}
+.call .call__container {
+  max-width: 700px;
+  background: #FFFFFF;
+  padding: 40px;
+  position: relative;
+}
+.call .call__container .call__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+.call .call__container h2 {
+  font-size: 28px;
+  font-family: "AA Stetica", sans-serif;
+  font-weight: 700;
+  line-height: 140%;
+  color: #2E3136;
+}
+.call .call__container .call__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+.call .call__container .call__form.disabled {
+  display: none;
+}
+.call .call__container .call__form .call__inputs {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.call .call__container .call__form .call__inputs label {
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+}
+.call .call__container .call__form .call__inputs label img {
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: 0.1s linear;
+  pointer-events: none;
+}
+.call .call__container .call__form .call__inputs input {
+  all: unset;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  color: #686868;
+  border: 2px solid rgb(231, 234, 237);
+  background: rgb(244, 245, 246);
+  padding: 20px;
+  max-width: 258px;
+  width: 100%;
+  cursor: text;
+  transition: 0.1s linear;
+}
+.call .call__container .call__form .call__inputs input.input-error {
+  border-color: rgb(226, 31, 47);
+}
+.call .call__container .call__form .call__inputs input.input-success {
+  border-color: rgb(231, 234, 237);
+}
+.call .call__container .call__form .call__inputs input.input-success + img {
+  opacity: 1;
+}
+.call .call__container .call__form .call__inputs input:hover {
+  border-color: rgb(157, 162, 167);
+}
+.call .call__container .call__form .call__inputs input:focus {
+  border-color: rgb(23, 24, 25);
+}
+.call .call__container .call__form .call__button {
+  display: flex;
+  gap: 20px;
+}
+.call .call__container .call__form .call__button .main-button {
+  width: 100%;
+  justify-content: center;
+  max-width: 300px;
+}
+.call .call__container .call__form .call__button p {
+  font-size: 14px;
+  font-family: "AA Stetica", sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  color: #2E3136;
+}
+.call .call__container .call__form .call__button a {
+  text-decoration: underline;
+  color: #2E3136;
+}
+.call .call__container .call__form .call__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.call .call__container .call__form .call__contacts h3 {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  line-height: 160%;
+  color: #2E3136;
+}
+.call .call__container .call__form .call__contacts div {
+  display: flex;
+  gap: 16px;
+}
+.call .call__container .call__form .call__contacts div .black-button {
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
+}
+.call .call__container .call__success {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.call .call__container .call__success.disabled {
+  display: none;
+}
+.call .call__container .call__success p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  line-height: 160%;
+  color: #2E3136;
+}
+
 .start {
   background: url("../assets/img/main-start-bg.png") center no-repeat;
   background-size: cover;
@@ -222,7 +373,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   flex-direction: column;
   align-items: center;
 }
-.start .start__container {
+.start__container {
   padding: 106px 94px 40px;
   display: flex;
   flex-direction: column;
@@ -230,12 +381,12 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 1600px;
   width: 100%;
 }
-.start .start__container .start__title {
+.start__container .start__title {
   display: flex;
   flex-direction: column;
   gap: 26px;
 }
-.start .start__container .start__title p {
+.start__container .start__title h1 {
   font-family: "AA Stetica", sans-serif;
   font-size: 52px;
   font-weight: 900;
@@ -244,16 +395,16 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 700px;
   color: #2E3136;
 }
-.start .start__container .start__title span {
+.start__container .start__title span {
   text-decoration: underline;
   text-decoration-color: #E21F2F;
 }
-.start .start__container .start__blocks {
+.start__container .start__blocks {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.start .start__container .start__blocks .start__block {
+.start__container .start__blocks .start__block {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,12 +412,12 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   background: #FFFFFF;
   position: relative;
 }
-.start .start__container .start__blocks .start__block svg {
+.start__container .start__blocks .start__block svg {
   position: absolute;
   top: -16px;
   left: 24px;
 }
-.start .start__container .start__blocks .start__block p {
+.start__container .start__blocks .start__block p {
   font-family: "AA Stetica", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -280,7 +431,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   flex-direction: column;
   align-items: center;
 }
-.about .about__container {
+.about__container {
   padding: 120px 94px 112px;
   display: flex;
   flex-direction: column;
@@ -289,18 +440,18 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 1600px;
   width: 100%;
 }
-.about .about__container .about__title {
+.about__container h2 {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 44px;
   font-weight: 700;
 }
 @media screen and (max-width: 600px) {
-  .about .about__container .about__title {
+  .about__container h2 {
     font-size: 30px;
   }
 }
-.about .about__container .about__our-mission {
+.about__container .about__our-mission {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,13 +463,14 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   position: relative;
   background: #FFFFFF;
 }
-.about .about__container .about__our-mission .about__our-mission_title {
+.about__container .about__our-mission h3 {
   font-family: "AA Stetica", sans-serif;
   font-size: 24px;
+  font-weight: 400;
   line-height: 140%;
   color: #2E3136;
 }
-.about .about__container .about__our-mission .about__our-mission_text {
+.about__container .about__our-mission p {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 32px;
@@ -327,19 +479,19 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   line-height: 140%;
   text-align: center;
 }
-.about .about__container .about__our-mission .quotation-first, .about .about__container .about__our-mission .quotation-second {
+.about__container .about__our-mission .quotation-first, .about__container .about__our-mission .quotation-second {
   position: absolute;
 }
-.about .about__container .about__our-mission .quotation-first {
+.about__container .about__our-mission .quotation-first {
   top: -46px;
   left: 42px;
 }
-.about .about__container .about__our-mission .quotation-second {
+.about__container .about__our-mission .quotation-second {
   bottom: -46px;
   right: 42px;
   rotate: 180deg;
 }
-.about .about__container .about__info {
+.about__container .about__info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -347,45 +499,45 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   gap: 28px;
   margin-top: 72px;
 }
-.about .about__container .about__info .about__info-top-item {
+.about__container .about__info .about__info-top-item {
   display: flex;
   gap: 28px;
 }
-.about .about__container .about__info .about__info-top-item .about__info-left-photo {
+.about__container .about__info .about__info-top-item .about__info-left-photo {
   max-width: 692px;
   width: 100%;
   max-height: 414px;
   height: 100%;
   position: relative;
 }
-.about .about__container .about__info .about__info-top-item .about__info-left-photo:before {
+.about__container .about__info .about__info-top-item .about__info-left-photo:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(270deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
 }
-.about .about__container .about__info .about__info-top-item .about__info-right-text {
+.about__container .about__info .about__info-top-item .about__info-right-text {
   display: flex;
   flex-direction: column;
   gap: 28px;
   padding: 40px 40px 40px 0;
 }
-.about .about__container .about__info .about__info-top-item .about__info-right-text .right-text__title, .about .about__container .about__info .about__info-top-item .about__info-right-text .right-text__text {
-  color: #171819;
+.about__container .about__info .about__info-top-item .about__info-right-text h4, .about__container .about__info .about__info-top-item .about__info-right-text p {
+  color: rgb(23, 24, 25);
   font-family: "AA Stetica", sans-serif;
   font-size: 20px;
   line-height: 140%;
 }
-.about .about__container .about__info .about__info-top-item .about__info-right-text .right-text__title {
+.about__container .about__info .about__info-top-item .about__info-right-text h4 {
   font-weight: 700;
 }
-.about .about__container .about__info .about__info-items {
+.about__container .about__info .about__info-items {
   display: flex;
   flex-wrap: wrap;
   gap: 28px;
 }
-.about .about__container .about__info .about__info-items .about__info-item {
+.about__container .about__info .about__info-items .about__info-item {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -393,21 +545,21 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   width: 100%;
   max-width: 692px;
 }
-.about .about__container .about__info .about__info-items .about__info-item-title {
+.about__container .about__info .about__info-items .about__info-item h4 {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 140%;
-  color: #171819;
+  color: rgb(23, 24, 25);
 }
-.about .about__container .about__info .about__info-items .about__info-item-text {
+.about__container .about__info .about__info-items .about__info-item p {
   font-family: "AA Stetica", sans-serif;
   font-size: 16px;
-  color: #171819;
+  color: rgb(23, 24, 25);
   line-height: 24px;
 }
-.about .about__container .about__info .about__info-top-item, .about .about__container .about__info .about__info-item {
+.about__container .about__info .about__info-top-item, .about__container .about__info .about__info-item {
   background: #FFFFFF;
 }
 
@@ -427,7 +579,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   width: 100%;
   padding: 120px 94px;
 }
-.services__container .services__title {
+.services__container h2 {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 44px;
@@ -435,7 +587,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   line-height: 120%;
 }
 @media screen and (max-width: 600px) {
-  .services__container .services__title {
+  .services__container h2 {
     font-size: 30px;
   }
 }
@@ -468,19 +620,19 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   flex-direction: column;
   gap: 20px;
 }
-.services__container .services__item .services__item-info .services__item-title {
+.services__container .services__item .services__item-info h3 {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 140%;
-  color: #171819;
+  color: rgb(23, 24, 25);
 }
-.services__container .services__item .services__item-info .services__item-text {
+.services__container .services__item .services__item-info p {
   font-family: "AA Stetica", sans-serif;
   font-size: 20px;
   line-height: 160%;
-  color: #171819;
+  color: rgb(23, 24, 25);
 }
 
 .guarantees {
@@ -489,7 +641,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   align-items: center;
   background: #F4F5F6;
 }
-.guarantees .guarantees__container {
+.guarantees__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -499,13 +651,13 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 1600px;
   padding: 120px 94px;
 }
-.guarantees .guarantees__container .guarantees__title {
+.guarantees__container .guarantees__title {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
-.guarantees .guarantees__container .guarantees__title .guarantees__main-title {
+.guarantees__container .guarantees__title h2 {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 44px;
@@ -514,22 +666,23 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   color: #2E3136;
 }
 @media screen and (max-width: 600px) {
-  .guarantees .guarantees__container .guarantees__title .guarantees__main-title {
+  .guarantees__container .guarantees__title h2 {
     font-size: 30px;
   }
 }
-.guarantees .guarantees__container .guarantees__title .guarantees__subtitle {
+.guarantees__container .guarantees__title p {
   font-family: "AA Stetica", sans-serif;
   font-size: 24px;
   line-height: 140%;
   color: #2E3136;
 }
-.guarantees .guarantees__container .guarantees__items {
+.guarantees__container .guarantees__items {
   display: flex;
   gap: 20px;
   width: 100%;
+  min-height: 285px;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item {
+.guarantees__container .guarantees__items .guarantees__item {
   display: flex;
   flex-direction: column;
   gap: 19px;
@@ -538,39 +691,42 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 309px;
   width: 100%;
   cursor: pointer;
+  max-height: 259px;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item .guarantees__item-title {
+.guarantees__container .guarantees__items .guarantees__item h3 {
   font-family: "AA Stetica", sans-serif;
   font-size: 20px;
   line-height: 160%;
   font-weight: 700;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item svg {
+.guarantees__container .guarantees__items .guarantees__item svg {
   color: #E21F2F;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item .guarantees__item-text {
+.guarantees__container .guarantees__items .guarantees__item p {
   display: none;
   font-family: "AA Stetica", sans-serif;
   font-size: 16px;
   line-height: 24px;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item.active {
+.guarantees__container .guarantees__items .guarantees__item:hover {
   max-width: 426px;
   background: #E21F2F;
   height: 285px;
+  max-height: 285px;
+  transition: 0.1s linear;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item.active .guarantees__item-title {
+.guarantees__container .guarantees__items .guarantees__item:hover h3 {
   font-size: 28px;
   line-height: 160%;
   font-weight: 700;
   color: #FFFFFF;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item.active svg {
+.guarantees__container .guarantees__items .guarantees__item:hover svg {
   color: #FFFFFF;
   width: 78px;
   height: 78px;
 }
-.guarantees .guarantees__container .guarantees__items .guarantees__item.active .guarantees__item-text {
+.guarantees__container .guarantees__items .guarantees__item:hover p {
   display: block;
   color: #FFFFFF;
 }
@@ -581,7 +737,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   align-items: center;
   background: #FFFFFF;
 }
-.work-stages .work-stages__container {
+.work-stages__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -591,35 +747,35 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   max-width: 1600px;
   padding: 100px 94px 120px;
 }
-.work-stages .work-stages__container .work-stages__title {
+.work-stages__container .work-stages__title {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
 }
-.work-stages .work-stages__container .work-stages__title h1 {
+.work-stages__container .work-stages__title h2 {
   color: #2E3136;
   font-family: "AA Stetica", sans-serif;
   font-size: 44px;
   font-weight: 700;
 }
 @media screen and (max-width: 600px) {
-  .work-stages .work-stages__container .work-stages__title h1 {
+  .work-stages__container .work-stages__title h2 {
     font-size: 30px;
   }
 }
-.work-stages .work-stages__container .work-stages__title p {
+.work-stages__container .work-stages__title p {
   font-family: "AA Stetica", sans-serif;
   font-size: 24px;
   line-height: 140%;
 }
-.work-stages .work-stages__container .work-stages__cases {
+.work-stages__container .work-stages__cases {
   display: flex;
   flex-direction: column;
   gap: 70px;
   width: 100%;
 }
-.work-stages .work-stages__container .work-stages__cases .cases__car-stages {
+.work-stages__container .work-stages__cases .cases__car-stages {
   display: flex;
   padding: 0 40px;
   position: relative;
@@ -627,7 +783,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   justify-content: space-between;
   height: 50px;
 }
-.work-stages .work-stages__container .work-stages__cases .cases__car-stages:before {
+.work-stages__container .work-stages__cases .cases__car-stages:before {
   content: "";
   position: absolute;
   top: calc(50% - 1px);
@@ -638,7 +794,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   background: #E7EAED;
   z-index: 0;
 }
-.work-stages .work-stages__container .work-stages__cases .cases__car-stages .cases__circle {
+.work-stages__container .work-stages__cases .cases__car-stages .cases__circle {
   width: 20px;
   height: 20px;
   background: #E21F2F;
@@ -646,59 +802,59 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   position: relative;
   z-index: 1;
 }
-.work-stages .work-stages__container .work-stages__cases .cases__car-stages .cases__car {
+.work-stages__container .work-stages__cases .cases__car-stages .cases__car {
   position: absolute;
   z-index: 2;
   left: 0;
   transition: 0.2s ease-in;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case {
+.work-stages__container .work-stages__cases .work-stages__case {
   display: flex;
   gap: 28px;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case.disabled {
+.work-stages__container .work-stages__cases .work-stages__case.disabled {
   display: none;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__img {
+.work-stages__container .work-stages__cases .work-stages__case .case__img {
   width: 452px;
   height: 301px;
   position: relative;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__img:before {
+.work-stages__container .work-stages__cases .work-stages__case .case__img:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(270deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__img img {
+.work-stages__container .work-stages__cases .work-stages__case .case__img img {
   width: 100%;
   height: 100%;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info {
+.work-stages__container .work-stages__cases .work-stages__case .case__info {
   width: 100%;
   max-width: 932px;
   display: flex;
   flex-direction: column;
   gap: 39px;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text {
+.work-stages__container .work-stages__cases .work-stages__case .case__info .case__text {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text p {
+.work-stages__container .work-stages__cases .work-stages__case .case__info .case__text p {
   font-family: "AA Stetica", sans-serif;
   font-size: 20px;
   line-height: 160%;
   color: #2E3136;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div {
+.work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div .case__step {
+.work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div .case__step {
   padding: 12px;
   background: #E21F2F;
   width: fit-content;
@@ -709,14 +865,14 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   text-transform: uppercase;
   color: #FFFFFF;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div h1 {
+.work-stages__container .work-stages__cases .work-stages__case .case__info .case__text div h3 {
   font-size: 28px;
   font-family: "AA Stetica", sans-serif;
   font-weight: 700;
   line-height: 140%;
   color: #2E3136;
 }
-.work-stages .work-stages__container .work-stages__cases .work-stages__case .case__info .case__nav-buttons {
+.work-stages__container .work-stages__cases .work-stages__case .case__info .case__nav-buttons {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
@@ -728,7 +884,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   align-items: center;
   background: #F4F5F6;
 }
-.our-cases .our-cases__container {
+.our-cases__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -737,6 +893,528 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   width: 100%;
   max-width: 1600px;
   padding: 120px 94px 142px;
+}
+.our-cases__container .our-cases__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.our-cases__container .our-cases__title h2 {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 120%;
+}
+@media screen and (max-width: 600px) {
+  .our-cases__container .our-cases__title h2 {
+    font-size: 30px;
+  }
+}
+.our-cases__container .our-cases__title p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 24px;
+  line-height: 140%;
+  color: #2E3136;
+}
+.our-cases__container .our-cases__cases {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.our-cases__container .our-cases__cases .our-cases__choose {
+  display: flex;
+  gap: 16px;
+}
+.our-cases__container .our-cases__cases .our-cases__choose .choose {
+  padding: 16px 20px;
+  cursor: pointer;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  background: #FFFFFF;
+  color: rgb(23, 24, 25);
+  box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05);
+  transition: 0.1s linear;
+  user-select: none;
+}
+.our-cases__container .our-cases__cases .our-cases__choose .choose.active {
+  background: #E21F2F;
+  color: #FFFFFF;
+  box-shadow: none;
+}
+.our-cases__container .our-cases__cases .our-cases__case {
+  display: none;
+  gap: 28px;
+}
+.our-cases__container .our-cases__cases .our-cases__case.active {
+  display: flex;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel {
+  width: 100%;
+  max-width: 452px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .main-image {
+  width: 452px;
+  height: 375px;
+  position: relative;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .main-image:hover .full-image img {
+  opacity: 1;
+  backdrop-filter: blur(11px) opacity(1);
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .main-image:before {
+  content: "";
+  position: absolute;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .main-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .main-image .full-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: 0.2s linear;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .main-image .full-image img {
+  opacity: 0;
+  padding: 33px;
+  backdrop-filter: blur(11px) opacity(0);
+  background: rgba(0, 0, 0, 0.27);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper {
+  width: 100%;
+  max-width: 452px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  padding-bottom: 1px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper::-webkit-scrollbar {
+  width: 15px;
+  height: 5px;
+  background: #F6F9FA;
+  border-radius: 10px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper::-webkit-scrollbar-thumb {
+  background: #E21F2F;
+  border-radius: 10px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 8px 20px 0 rgba(226, 31, 47, 0.3);
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper .thumbnails {
+  display: flex;
+  gap: 16px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper .thumbnails .thumbnail {
+  width: 78px;
+  height: 58px;
+  cursor: pointer;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper .thumbnails .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  opacity: 0.5;
+  transition: 0.2s ease-out;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .thumbnails-wrapper .thumbnails .thumbnail.active img {
+  border: 2px solid #E21F2F;
+  opacity: 1;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .full-image-show {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 24, 25, 0.35);
+  z-index: 5;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .full-image-show.active {
+  display: flex;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .full-image-show .full-image__inspect {
+  width: 100%;
+  max-width: 960px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .case__carousel .full-image-show .close-zoom {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  color: #FFFFFF;
+  background: #E21F2F;
+  border-radius: 50%;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__left .main-button {
+  width: 100%;
+  justify-content: center;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__right h3 {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 140%;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__right ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 32px;
+  position: relative;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__right ul li:before {
+  content: url("../assets/svg/cases-check.svg");
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__right ul li h4 {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  color: #2E3136;
+  line-height: 160%;
+}
+.our-cases__container .our-cases__cases .our-cases__case .case__right ul li p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2E3136;
+}
+
+.under-key {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+}
+.under-key__container {
+  display: flex;
+  gap: 28px;
+  width: 100%;
+  max-width: 1600px;
+  padding: 60px 94px;
+}
+.under-key__container .under-key__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 692px;
+}
+.under-key__container .under-key__left h2 {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 120%;
+}
+@media screen and (max-width: 600px) {
+  .under-key__container .under-key__left h2 {
+    font-size: 30px;
+  }
+}
+.under-key__container .under-key__left span {
+  color: #E21F2F;
+}
+.under-key__container .under-key__left p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  line-height: 160%;
+  color: #2E3136;
+}
+.under-key__container .under-key__left p.strong {
+  font-weight: 700;
+}
+.under-key__container .under-key__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.under-key__container .under-key__right .right__img {
+  width: 100%;
+  height: 100%;
+  max-width: 692px;
+  max-height: 372px;
+  position: relative;
+}
+.under-key__container .under-key__right .right__img:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
+}
+.under-key__container .under-key__right .right__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.under-key__container .under-key__right .manager {
+  position: absolute;
+  max-width: 437px;
+  bottom: -60px;
+}
+
+.faq {
+  background: #F4F5F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.faq__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 52px;
+  max-width: 1600px;
+  width: 100%;
+  padding: 120px 94px;
+}
+.faq__container .faq__title {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.faq__container .faq__title h2 {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 120%;
+}
+@media screen and (max-width: 600px) {
+  .faq__container .faq__title h2 {
+    font-size: 30px;
+  }
+}
+.faq__container .faq__title p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 24px;
+  line-height: 140%;
+  color: #2E3136;
+}
+.faq__container .faq__content {
+  display: flex;
+  gap: 28px;
+  width: 100%;
+}
+.faq__container .faq__content .faq__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.faq__container .faq__content .faq__questions .faq__question {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background: #FFFFFF;
+  width: 100%;
+}
+.faq__container .faq__content .faq__questions .faq__question.active .plus {
+  rotate: 45deg;
+  color: #E21F2F;
+}
+.faq__container .faq__content .faq__questions .faq__question.active .answer {
+  max-height: 600px;
+}
+.faq__container .faq__content .faq__questions .faq__question-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.faq__container .faq__content .faq__questions .faq__question-title h3 {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  color: #2E3136;
+  line-height: 160%;
+}
+.faq__container .faq__content .faq__questions .faq__question-title .plus {
+  overflow: unset;
+  color: #9DA2A7;
+  transition: 0.1s ease-out;
+  cursor: pointer;
+}
+.faq__container .faq__content .faq__questions .faq__question-title .plus:hover {
+  color: #E21F2F;
+}
+.faq__container .faq__content .faq__questions .faq__question .answer {
+  max-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  transition: 0.3s linear;
+}
+.faq__container .faq__content .faq__questions .faq__question .answer h4 {
+  padding-top: 19px;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 24px;
+  color: #2E3136;
+  line-height: 24px;
+}
+.faq__container .faq__content .faq__questions .faq__question .answer p, .faq__container .faq__content .faq__questions .faq__question .answer li {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  color: #2E3136;
+  line-height: 24px;
+}
+
+.contacts {
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contacts__container {
+  display: flex;
+  gap: 29px;
+  max-width: 1600px;
+  width: 100%;
+  padding: 120px 94px;
+}
+.contacts__container .contacts-cards {
+  display: flex;
+  gap: 40px;
+}
+.contacts__container .contacts-cards .contacts-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.contacts__container .contacts-cards .contacts-card .card__img-box {
+  padding: 13px;
+  background: rgb(23, 24, 25);
+  display: flex;
+}
+.contacts__container .contacts-cards .contacts-card .card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.contacts__container .contacts-cards .contacts-card .card__content p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  color: #2E3136;
+  line-height: 24px;
+}
+.contacts__container .contacts-cards .contacts-card .card__content p.strong {
+  font-weight: 700;
+}
+.contacts__container .contacts__left {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.contacts__container .contacts__left .contacts__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contacts__container .contacts__left .contacts__info h2 {
+  color: #2E3136;
+  font-family: "AA Stetica", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 120%;
+}
+@media screen and (max-width: 600px) {
+  .contacts__container .contacts__left .contacts__info h2 {
+    font-size: 30px;
+  }
+}
+.contacts__container .contacts__left .contacts__info p {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 20px;
+  line-height: 160%;
+  color: #2E3136;
+}
+.contacts__container .contacts__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contacts__container .contacts__right .map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.contacts__container .contacts__right .map:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(360deg, rgba(226, 31, 47, 0.5), rgba(226, 31, 47, 0) 100%);
+  height: 40%;
+  bottom: 0;
+  pointer-events: none;
+}
+.contacts__container .contacts__right .contacts-cards {
+  padding: 20px;
+  gap: 20px;
+  background: #FFFFFF;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

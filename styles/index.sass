@@ -62,7 +62,7 @@ $font-path: "../assets/fonts"
 $main-bg: #F4F5F6
 $main-color: #E21F2F
 $main-text: #2E3136
-$main-black: #171819
+$main-black: rgb(23, 24, 25)
 $white: #FFFFFF
 
 .main-button, .black-button
@@ -80,6 +80,8 @@ $white: #FFFFFF
   display: flex
   align-items: center
   gap: 10px
+
+  user-select: none
 
   &.round
     padding: 20px
@@ -113,12 +115,15 @@ body
 *
   box-sizing: border-box
 
-p, h1, h2, h3, h4, h5, h6
+p, h1, h2, h3, h4, h5, h6, ul, li
   padding: 0
   margin: 0
 
 a
   text-decoration: none
+
+li
+  list-style: none
 
 header
   background: $main-black
@@ -218,3 +223,152 @@ footer
         line-height: 24px
         color: $white
 
+
+.call
+  display: none
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 40px
+
+  position: fixed
+  width: 100%
+  height: 100%
+  background: rgb(23 24 25 / 0.35)
+
+  transition: .2s ease-out
+
+  &.active
+    display: flex
+
+  .call__container
+    max-width: 700px
+    background: $white
+    padding: 40px
+
+    position: relative
+
+    .call__close
+      position: absolute
+      top: 12px
+      right: 12px
+      cursor: pointer
+
+    h2
+      font-size: 28px
+      font-family: "AA Stetica", sans-serif
+      font-weight: 700
+      line-height: 140%
+      color: $main-text
+
+    .call__form
+      width: 100%
+
+      display: flex
+      flex-direction: column
+      gap: 32px
+
+      position: relative
+
+      &.disabled
+        display: none
+
+      .call__inputs
+        display: flex
+        gap: 20px
+        flex-wrap: wrap
+
+        label
+          width: 100%
+          max-width: 300px
+          position: relative
+
+          img
+            opacity: 0
+            position: absolute
+            top: 20px
+            right: 20px
+            transition: .1s linear
+            pointer-events: none
+
+        input
+          all: unset
+          @include text-16()
+          color: #686868
+          border: 2px solid rgb(231, 234, 237)
+          background: rgb(244, 245, 246)
+          padding: 20px
+          max-width: 258px
+          width: 100%
+
+          cursor: text
+
+          transition: .1s linear
+
+          &.input-error
+            border-color: rgb(226, 31, 47)
+
+          &.input-success
+            border-color: rgb(231, 234, 237)
+
+            & + img
+              opacity: 1
+
+          &:hover
+            border-color: rgb(157, 162, 167)
+
+          &:focus
+            border-color: rgb(23, 24, 25)
+
+      .call__button
+        display: flex
+        gap: 20px
+
+        .main-button
+          width: 100%
+          justify-content: center
+          max-width: 300px
+
+        p
+          font-size: 14px
+          font-family: "AA Stetica", sans-serif
+          font-weight: 400
+          line-height: 24px
+          color: $main-text
+
+        a
+          text-decoration: underline
+          color: $main-text
+
+      .call__contacts
+        display: flex
+        flex-direction: column
+        gap: 16px
+
+        h3
+          @include text-20()
+          line-height: 160%
+          color: $main-text
+
+        div
+          display: flex
+          gap: 16px
+
+          .black-button
+            width: 100%
+            max-width: 300px
+            justify-content: center
+
+    .call__success
+      display: flex
+      flex-direction: column
+      gap: 20px
+      position: relative
+
+      &.disabled
+        display: none
+
+      p
+        @include text-20()
+        line-height: 160%
+        color: $main-text

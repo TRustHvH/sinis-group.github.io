@@ -6,6 +6,8 @@
     <title>ChinaTrade</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="lib/jquery.maskedinput.js"></script>
 </head>
 <body>
     <header>
@@ -27,7 +29,7 @@
                     </svg>
                     <p>+375 (29) 366-62-36</p>
                 </a>
-                <button class="main-button">Заказать звонок</button>
+                <button class="main-button open-form">Заказать звонок</button>
             </div>
         </div>
     </header>
@@ -35,7 +37,7 @@
         <div class="start">
             <div class="start__container">
                 <div class="start__title">
-                    <p>Индивидуальный подбор и <span>прямые поставки</span> товаров из Китая</p>
+                    <h1>Индивидуальный подбор и <span>прямые поставки</span> товаров из Китая</h1>
                     <button class="main-button">
                         Рассчитать стоимость
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -73,10 +75,10 @@
         </div>
         <div class="about">
             <div class="about__container">
-                <p class="about__title">О нашей компании</p>
+                <h2>О нашей компании</h2>
                 <div class="about__our-mission">
-                    <p class="about__our-mission_title">Наша миссия</p>
-                    <p class="about__our-mission_text">Помогать клиентам эффективно работать<br/> c производителями и поставщиками из Китая</p>
+                    <h3>Наша миссия</h3>
+                    <p>Помогать клиентам эффективно работать<br/> c производителями и поставщиками из Китая</p>
                     <svg class="quotation-first" width="115" height="85" viewBox="0 0 115 85" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <use href="#quotation-marks"></use>
                     </svg>
@@ -90,8 +92,8 @@
                             <img src="assets/img/main-about-photo.png" alt="main-about-photo">
                         </div>
                         <div class="about__info-right-text">
-                            <p class="right-text__title">С 2011 года «Синис Групп» занимается подбором и доставкой товаров из Китая.</p>
-                            <p class="right-text__text">Начиная с первого небольшого проекта мы прошли долгий путь до надежного партнера, способного помогать клиентам расти и масштабироваться. Нас выбирают за надежность, экспертность и комфорт. Мы гордимся тем, что наши услуги способствуют развитию бизнеса партнеров.</p>
+                            <h4>С 2011 года «Синис Групп» занимается подбором и доставкой товаров из Китая.</h4>
+                            <p>Начиная с первого небольшого проекта мы прошли долгий путь до надежного партнера, способного помогать клиентам расти и масштабироваться. Нас выбирают за надежность, экспертность и комфорт. Мы гордимся тем, что наши услуги способствуют развитию бизнеса партнеров.</p>
                             <button class="main-button">
                                 Узнать подробнее
                                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -105,29 +107,29 @@
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <use href="#about-box"></use>
                             </svg>
-                            <p class="about__info-item-title">2000+ поставщиков</p>
-                            <p class="about__info-item-text">Подберем лучшего по цене поставщика или производителя из собственной проверенной базы</p>
+                            <h4>2000+ поставщиков</h4>
+                            <p>Подберем лучшего по цене поставщика или производителя из собственной проверенной базы</p>
                         </div>
                         <div class="about__info-item">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <use href="#people-safe"></use>
                             </svg>
-                            <p class="about__info-item-title">Экспертность</p>
-                            <p class="about__info-item-text">Более 150 постоянных клиентов по всему миру каждый год увеличивают свою прибыль минимум на 30% благодаря нам</p>
+                            <h4>Экспертность</h4>
+                            <p>Более 150 постоянных клиентов по всему миру каждый год увеличивают свою прибыль минимум на 30% благодаря нам</p>
                         </div>
                         <div class="about__info-item">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <use href="#shield"></use>
                             </svg>
-                            <p class="about__info-item-title">Надежность</p>
-                            <p class="about__info-item-text">Выстроенные алгоритмы работы и профессиональная команда способствуют 100% успешной реализации проектов по поставкам</p>
+                            <h4>Надежность</h4>
+                            <p>Выстроенные алгоритмы работы и профессиональная команда способствуют 100% успешной реализации проектов по поставкам</p>
                         </div>
                         <div class="about__info-item">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <use href="#resting"></use>
                             </svg>
-                            <p class="about__info-item-title">Комфорт</p>
-                            <p class="about__info-item-text">Мы берем на себя все процессы по поставке, обеспечиваем их прозрачность, за счет чего клиент может сосредоточиться на развитии своего бизнеса.</p>
+                            <h4>Комфорт</h4>
+                            <p>Мы берем на себя все процессы по поставке, обеспечиваем их прозрачность, за счет чего клиент может сосредоточиться на развитии своего бизнеса.</p>
                         </div>
                     </div>
                 </div>
@@ -135,14 +137,14 @@
         </div>
         <div class="services">
             <div class="services__container">
-                <p class="services__title">Основные услуги Синис Групп</p>
+                <h2>Основные услуги Синис Групп</h2>
                 <div class="services__item">
                     <div class="services__item-img">
                         <img src="assets/img/services-first.png" alt="man-working">
                     </div>
                     <div class="services__item-info">
-                        <p class="services__item-title">Подбор и поставка товаров «под ключ»</p>
-                        <p class="services__item-text">Поиск, поставка и оформление. Берем на себя все процессы. Вы получаете нужный продукт, на выгодных условиях и без необходимости самостоятельно заниматься всеми процессами. Это сэкономит вам время и убережет от рисков.</p>
+                        <h3>Подбор и поставка товаров «под ключ»</h3>
+                        <p>Поиск, поставка и оформление. Берем на себя все процессы. Вы получаете нужный продукт, на выгодных условиях и без необходимости самостоятельно заниматься всеми процессами. Это сэкономит вам время и убережет от рисков.</p>
                         <button class="main-button">
                             Узнать подробнее
                             <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -153,8 +155,8 @@
                 </div>
                 <div class="services__item">
                     <div class="services__item-info">
-                        <p class="services__item-title">Консолидация грузов</p>
-                        <p class="services__item-text">Если вам нужны товары от разных поставщиков и производителей, то мы организуем временное хранение товара на нашем складе в Китае до сбора всего заказа на отправку одной партией. Это поможет вам сэкономить на доставке и экспортном-импортном оформлении.</p>
+                        <h3>Консолидация грузов</h3>
+                        <p>Если вам нужны товары от разных поставщиков и производителей, то мы организуем временное хранение товара на нашем складе в Китае до сбора всего заказа на отправку одной партией. Это поможет вам сэкономить на доставке и экспортном-импортном оформлении.</p>
                         <button class="main-button">
                             Узнать подробнее
                             <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -171,8 +173,8 @@
                         <img src="assets/img/services-third.png" alt="man-working">
                     </div>
                     <div class="services__item-info">
-                        <p class="services__item-title">Контрактное производство</p>
-                        <p class="services__item-text">Нужен товар с определенными характеристиками, которого нет у поставщиков? Хотите создать и развивать собственный бренд? Мы поможем организовать контрактное производство!</p>
+                        <h3>Контрактное производство</h3>
+                        <p>Нужен товар с определенными характеристиками, которого нет у поставщиков? Хотите создать и развивать собственный бренд? Мы поможем организовать контрактное производство!</p>
                         <button class="main-button">
                             Узнать подробнее
                             <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -186,37 +188,37 @@
         <div class="guarantees">
             <div class="guarantees__container">
                 <div class="guarantees__title">
-                    <p class="guarantees__title">Гарантии</p>
-                    <p class="guarantees__subtitle">Почему выбирают доставку из Китая под ключ в «Синис Групп»</p>
+                    <h2>Гарантии</h2>
+                    <p>Почему выбирают доставку из Китая под ключ в «Синис Групп»</p>
                 </div>
                 <div class="guarantees__items">
-                    <div class="guarantees__item active">
+                    <div class="guarantees__item">
                         <svg class="guarantees__item-icon" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <use href="#transaction-security"></use>
                         </svg>
-                        <p class="guarantees__item-title">Безопасность сделки</p>
-                        <p class="guarantees__item-text">Заключение договора. Прозрачные финансовые операции. Многоуровневый контроль изготовления и доставки товаров.</p>
+                        <h3>Безопасность сделки</h3>
+                        <p>Заключение договора. Прозрачные финансовые операции. Многоуровневый контроль изготовления и доставки товаров.</p>
                     </div>
                     <div class="guarantees__item">
                         <svg class="guarantees__item-icon" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <use href="#individual-approach"></use>
                         </svg>
-                        <p class="guarantees__item-title">Индивидуальный подход</p>
-                        <p class="guarantees__item-text">Предлагаем решения, которые будут оптимальны и выгодны именно вам.</p>
+                        <h3>Индивидуальный подход</h3>
+                        <p>Предлагаем решения, которые будут оптимальны и выгодны именно вам.</p>
                     </div>
                     <div class="guarantees__item">
                         <svg class="guarantees__item-icon" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <use href="#quality"></use>
                         </svg>
-                        <p class="guarantees__item-title">Качество</p>
-                        <p class="guarantees__item-text">Прямая связь с производителем и контроль товара с нашей стороны. Вы получаете товар, на 100% соответствующий вашим требованиям.</p>
+                        <h3>Качество</h3>
+                        <p>Прямая связь с производителем и контроль товара с нашей стороны. Вы получаете товар, на 100% соответствующий вашим требованиям.</p>
                     </div>
                     <div class="guarantees__item">
                         <svg class="guarantees__item-icon" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <use href="#expertise"></use>
                         </svg>
-                        <p class="guarantees__item-title">Экспертность</p>
-                        <p class="guarantees__item-text">Наша команда профессионалов с многолетним опытом обеспечивает эффективность и точность всех этапов работы.</p>
+                        <h3>Экспертность</h3>
+                        <p>Наша команда профессионалов с многолетним опытом обеспечивает эффективность и точность всех этапов работы.</p>
                     </div>
                 </div>
             </div>
@@ -224,7 +226,7 @@
         <div class="work-stages">
             <div class="work-stages__container">
                 <div class="work-stages__title">
-                    <h1>Этапы работ</h1>
+                    <h2>Этапы работ</h2>
                     <p>Каждый этап под контролем — вы точно знаете, что происходит</p>
                 </div>
                 <div class="work-stages__cases">
@@ -248,7 +250,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 1</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -275,7 +277,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 2</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -302,7 +304,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 3</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -329,7 +331,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 4</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -356,7 +358,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 5</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -383,7 +385,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 6</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -410,7 +412,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 7</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -437,7 +439,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 8</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -464,7 +466,7 @@
                             <div class="case__text">
                                 <div>
                                     <p class="case__step">шаг 9</p>
-                                    <h1>Анализ запроса и уточнение деталей</h1>
+                                    <h3>Анализ запроса и уточнение деталей</h3>
                                 </div>
                                 <p>Мы детально прорабатываем запрос клиента: уточняем характеристики товара, технические особенности, условия поставки, желаемые цены. Это позволяет заранее исключить недопонимание и предложить оптимальные условия.</p>
                             </div>
@@ -489,14 +491,609 @@
         <div class="our-cases">
             <div class="our-cases__container">
                 <div class="our-cases__title">
-
+                    <h2>Наши кейсы</h2>
+                    <p>Примеры выполненных нами поставок из Китая «под ключ»</p>
                 </div>
                 <div class="our-cases__cases">
                     <div class="our-cases__choose">
-
+                        <div class="choose active">Клиент 1</div>
+                        <div class="choose">Клиент 2</div>
+                        <div class="choose">Клиент 3</div>
+                        <div class="choose">Клиент 4</div>
+                        <div class="choose">Клиент 5</div>
+                    </div>
+                    <div class="our-cases__case active">
+                        <div class="case__left">
+                            <div class="case__carousel">
+                                <div class="main-image">
+                                    <img class="mainImage" src="assets/img/carousel/full.png" alt="Главное изображение">
+                                    <div class="full-image">
+                                        <img src="assets/svg/zoom-in.svg" class="click-zoom" alt=""/>
+                                    </div>
+                                </div>
+                                <div class="thumbnails-wrapper">
+                                    <div class="thumbnails">
+                                        <div class="thumbnail active"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                    </div>
+                                </div>
+                                <div class="full-image-show">
+                                    <svg class="close-zoom" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#close"></use>
+                                    </svg>
+                                    <img src="" alt="" class="full-image__inspect"/>
+                                </div>
+                            </div>
+                            <button class="main-button">Хочу так же!</button>
+                        </div>
+                        <div class="case__right">
+                            <h3>Оптимизация закупок водонагревательного оборудования</h3>
+                            <ul>
+                                <li>
+                                    <h4>Подбор надежного производителя</h4>
+                                    <p>Подбор надежного производителя. Ранее клиент закупал насосы и бойлеры в Европе, мы нашли для него проверенного производителя в Китае, предложив аналогичное качество по более выгодной цене.</p>
+                                </li>
+                                <li>
+                                    <h4>Оформление государственной лицензии</h4>
+                                    <p>Учли различия в ГОСТах Китая и ЕАЭС, помогли с сертификацией и успешно получили все необходимые разрешения.</p>
+                                </li>
+                                <li>
+                                    <h4>Снижение затрат на 25%</h4>
+                                    <p>Переход на нового поставщика позволил клиенту сократить расходы на закупку без потери качества, что сделало его продукцию более конкурентоспособной.</p>
+                                </li>
+                                <li>
+                                    <h4>Долгосрочное сотрудничество</h4>
+                                    <p>Разовый заказ перерос в постоянную работу – сейчас мы организуем регулярные поставки, увеличивая объемы и укрепляя позиции клиента в нише.</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="our-cases__case">
-
+                        <div class="case__left">
+                            <div class="case__carousel">
+                                <div class="main-image">
+                                    <img class="mainImage" src="assets/img/carousel/full.png" alt="Главное изображение">
+                                    <div class="full-image">
+                                        <img src="assets/svg/zoom-in.svg" class="click-zoom" alt=""/>
+                                    </div>
+                                </div>
+                                <div class="thumbnails-wrapper">
+                                    <div class="thumbnails">
+                                        <div class="thumbnail active"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                    </div>
+                                </div>
+                                <div class="full-image-show">
+                                    <svg class="close-zoom" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#close"></use>
+                                    </svg>
+                                    <img src="" alt="" class="full-image__inspect"/>
+                                </div>
+                            </div>
+                            <button class="main-button">Хочу так же!</button>
+                        </div>
+                        <div class="case__right">
+                            <h3>Оптимизация закупок водонагревательного оборудования</h3>
+                            <ul>
+                                <li>
+                                    <h4>Подбор надежного производителя</h4>
+                                    <p>Подбор надежного производителя. Ранее клиент закупал насосы и бойлеры в Европе, мы нашли для него проверенного производителя в Китае, предложив аналогичное качество по более выгодной цене.</p>
+                                </li>
+                                <li>
+                                    <h4>Оформление государственной лицензии</h4>
+                                    <p>Учли различия в ГОСТах Китая и ЕАЭС, помогли с сертификацией и успешно получили все необходимые разрешения.</p>
+                                </li>
+                                <li>
+                                    <h4>Снижение затрат на 25%</h4>
+                                    <p>Переход на нового поставщика позволил клиенту сократить расходы на закупку без потери качества, что сделало его продукцию более конкурентоспособной.</p>
+                                </li>
+                                <li>
+                                    <h4>Долгосрочное сотрудничество</h4>
+                                    <p>Разовый заказ перерос в постоянную работу – сейчас мы организуем регулярные поставки, увеличивая объемы и укрепляя позиции клиента в нише.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="our-cases__case">
+                        <div class="case__left">
+                            <div class="case__carousel">
+                                <div class="main-image">
+                                    <img class="mainImage" src="assets/img/carousel/full.png" alt="Главное изображение">
+                                    <div class="full-image">
+                                        <img src="assets/svg/zoom-in.svg" class="click-zoom" alt=""/>
+                                    </div>
+                                </div>
+                                <div class="thumbnails-wrapper">
+                                    <div class="thumbnails">
+                                        <div class="thumbnail active"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                    </div>
+                                </div>
+                                <div class="full-image-show">
+                                    <svg class="close-zoom" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#close"></use>
+                                    </svg>
+                                    <img src="" alt="" class="full-image__inspect"/>
+                                </div>
+                            </div>
+                            <button class="main-button">Хочу так же!</button>
+                        </div>
+                        <div class="case__right">
+                            <h3>Оптимизация закупок водонагревательного оборудования</h3>
+                            <ul>
+                                <li>
+                                    <h4>Подбор надежного производителя</h4>
+                                    <p>Подбор надежного производителя. Ранее клиент закупал насосы и бойлеры в Европе, мы нашли для него проверенного производителя в Китае, предложив аналогичное качество по более выгодной цене.</p>
+                                </li>
+                                <li>
+                                    <h4>Оформление государственной лицензии</h4>
+                                    <p>Учли различия в ГОСТах Китая и ЕАЭС, помогли с сертификацией и успешно получили все необходимые разрешения.</p>
+                                </li>
+                                <li>
+                                    <h4>Снижение затрат на 25%</h4>
+                                    <p>Переход на нового поставщика позволил клиенту сократить расходы на закупку без потери качества, что сделало его продукцию более конкурентоспособной.</p>
+                                </li>
+                                <li>
+                                    <h4>Долгосрочное сотрудничество</h4>
+                                    <p>Разовый заказ перерос в постоянную работу – сейчас мы организуем регулярные поставки, увеличивая объемы и укрепляя позиции клиента в нише.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="our-cases__case">
+                        <div class="case__left">
+                            <div class="case__carousel">
+                                <div class="main-image">
+                                    <img class="mainImage" src="assets/img/carousel/full.png" alt="Главное изображение">
+                                    <div class="full-image">
+                                        <img src="assets/svg/zoom-in.svg" class="click-zoom" alt=""/>
+                                    </div>
+                                </div>
+                                <div class="thumbnails-wrapper">
+                                    <div class="thumbnails">
+                                        <div class="thumbnail active"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                    </div>
+                                </div>
+                                <div class="full-image-show">
+                                    <svg class="close-zoom" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#close"></use>
+                                    </svg>
+                                    <img src="" alt="" class="full-image__inspect"/>
+                                </div>
+                            </div>
+                            <button class="main-button">Хочу так же!</button>
+                        </div>
+                        <div class="case__right">
+                            <h3>Оптимизация закупок водонагревательного оборудования</h3>
+                            <ul>
+                                <li>
+                                    <h4>Подбор надежного производителя</h4>
+                                    <p>Подбор надежного производителя. Ранее клиент закупал насосы и бойлеры в Европе, мы нашли для него проверенного производителя в Китае, предложив аналогичное качество по более выгодной цене.</p>
+                                </li>
+                                <li>
+                                    <h4>Оформление государственной лицензии</h4>
+                                    <p>Учли различия в ГОСТах Китая и ЕАЭС, помогли с сертификацией и успешно получили все необходимые разрешения.</p>
+                                </li>
+                                <li>
+                                    <h4>Снижение затрат на 25%</h4>
+                                    <p>Переход на нового поставщика позволил клиенту сократить расходы на закупку без потери качества, что сделало его продукцию более конкурентоспособной.</p>
+                                </li>
+                                <li>
+                                    <h4>Долгосрочное сотрудничество</h4>
+                                    <p>Разовый заказ перерос в постоянную работу – сейчас мы организуем регулярные поставки, увеличивая объемы и укрепляя позиции клиента в нише.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="our-cases__case">
+                        <div class="case__left">
+                            <div class="case__carousel">
+                                <div class="main-image">
+                                    <img class="mainImage" src="assets/img/carousel/full.png" alt="Главное изображение">
+                                    <div class="full-image">
+                                        <img src="assets/svg/zoom-in.svg" class="click-zoom" alt=""/>
+                                    </div>
+                                </div>
+                                <div class="thumbnails-wrapper">
+                                    <div class="thumbnails">
+                                        <div class="thumbnail active"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                        <div class="thumbnail"><img src="assets/img/carousel/preview.png" data-full="assets/img/carousel/full.png" alt="80"></div>
+                                    </div>
+                                </div>
+                                <div class="full-image-show">
+                                    <svg class="close-zoom" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#close"></use>
+                                    </svg>
+                                    <img src="" alt="" class="full-image__inspect"/>
+                                </div>
+                            </div>
+                            <button class="main-button">Хочу так же!</button>
+                        </div>
+                        <div class="case__right">
+                            <h3>Оптимизация закупок водонагревательного оборудования</h3>
+                            <ul>
+                                <li>
+                                    <h4>Подбор надежного производителя</h4>
+                                    <p>Подбор надежного производителя. Ранее клиент закупал насосы и бойлеры в Европе, мы нашли для него проверенного производителя в Китае, предложив аналогичное качество по более выгодной цене.</p>
+                                </li>
+                                <li>
+                                    <h4>Оформление государственной лицензии</h4>
+                                    <p>Учли различия в ГОСТах Китая и ЕАЭС, помогли с сертификацией и успешно получили все необходимые разрешения.</p>
+                                </li>
+                                <li>
+                                    <h4>Снижение затрат на 25%</h4>
+                                    <p>Переход на нового поставщика позволил клиенту сократить расходы на закупку без потери качества, что сделало его продукцию более конкурентоспособной.</p>
+                                </li>
+                                <li>
+                                    <h4>Долгосрочное сотрудничество</h4>
+                                    <p>Разовый заказ перерос в постоянную работу – сейчас мы организуем регулярные поставки, увеличивая объемы и укрепляя позиции клиента в нише.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="under-key">
+            <div class="under-key__container">
+                <div class="under-key__left">
+                    <h2>Получите расчет полной стоимости <span>под ключ</span>!</h2>
+                    <p>Хотите узнать полную стоимость доставки и всех услуг под ключ? Мы подготовим точный расчет, включая все этапы — от поиска поставщика до доставки и сертификации, с учетом всех расходов и особенностей вашего заказа.</p>
+                    <p class="strong">Оставьте заявку, и наша команда свяжется с вами для расчета и обсуждения всех деталей!</p>
+                    <button class="main-button">
+                        Оставить заявку
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#arrow-right-top"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="under-key__right">
+                    <div class="right__img">
+                        <img src="assets/img/under-key.png" alt="under-key-image">
+                    </div>
+                    <img class="manager" src="assets/img/manager.png" alt="manager">
+                </div>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="faq__container">
+                <div class="faq__title">
+                    <h2>Часто задаваемые вопросы</h2>
+                    <p>Все, что нужно знать о доставке и сотрудничестве с нами</p>
+                </div>
+                <div class="faq__content">
+                    <div class="faq__questions">
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                        <div class="faq__question-title">
+                            <h3>Что входит в услугу «под ключ»?</h3>
+                            <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <use class="use" href="#question-plus"></use>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <h4>template</h4>
+                            <p>template</p>
+                            <ul>
+                                <li>— Поиск поставщика;</li>
+                                <li>— Подготовка всех необходимых документов;</li>
+                                <li>— Организация и проведение оплаты;</li>
+                                <li>— Контроль производства;</li>
+                                <li>— Логистика и доставка;</li>
+                                <li>— Таможенное оформление;</li>
+                                <li>— Сертификация (если требуется).</li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что, если я работаю с маркетплейсами и не хочу, чтобы мой поставщик стал доступен другим?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__questions">
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="faq__question">
+                            <div class="faq__question-title">
+                                <h3>Что входит в услугу «под ключ»?</h3>
+                                <svg class="plus" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="use" href="#question-plus"></use>
+                                </svg>
+                            </div>
+                            <div class="answer">
+                                <h4>template</h4>
+                                <p>template</p>
+                                <ul>
+                                    <li>— Поиск поставщика;</li>
+                                    <li>— Подготовка всех необходимых документов;</li>
+                                    <li>— Организация и проведение оплаты;</li>
+                                    <li>— Контроль производства;</li>
+                                    <li>— Логистика и доставка;</li>
+                                    <li>— Таможенное оформление;</li>
+                                    <li>— Сертификация (если требуется).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contacts">
+            <div class="contacts__container">
+                <div class="contacts__left">
+                    <div class="contacts__info">
+                        <h2>Как Вы можете с нами связаться:</h2>
+                        <p>Мы на связи в рабочее время по всем нижеперечисленным контактам, а также Вы можете заказать обратный звонок и наш специалист свяжется с Вами!</p>
+                        <button class="main-button">
+                            Заказать звонок
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <use href="#arrow-right-top"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="contacts-cards">
+                        <div class="contacts-card">
+                            <div class="card__img-box">
+                                <img src="assets/svg/mail.svg" alt="mail">
+                            </div>
+                            <div class="card__content">
+                                <p>Email:</p>
+                                <p class="strong">info@chinatrade.by</p>
+                            </div>
+                        </div>
+                        <div class="contacts-card">
+                            <div class="card__img-box">
+                                <img src="assets/svg/phone.svg" alt="phone">
+                            </div>
+                            <div class="card__content">
+                                <p>Телефон:</p>
+                                <p class="strong">+375 (29) 366-62-36</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__right">
+                    <div class="map">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4bab26ba0b384902c56fe396068d0ebf57c4997b1ec252c6fbed2a445c8e306b&amp;source=constructor" width="812" height="445" frameborder="0"></iframe>
+                        <div class="contacts-cards">
+                            <div class="contacts-card">
+                                <div class="card__img-box">
+                                    <img src="assets/svg/map.svg" alt="map">
+                                </div>
+                                <div class="card__content">
+                                    <p>Адрес:</p>
+                                    <p class="strong">г.Минск, ул. Притыцкого д.2к3y</p>
+                                </div>
+                            </div>
+                            <div class="contacts-card">
+                                <div class="card__img-box">
+                                    <img src="assets/svg/time.svg" alt="time">
+                                </div>
+                                <div class="card__content">
+                                    <p>Время работы:</p>
+                                    <p class="strong">пн-пт: 9:00 - 18:00 | сб-вс: выходной</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -591,16 +1188,71 @@
                 <path d="M16.754 12.25H7.75403M7.75403 12.25L12.254 7.75M7.75403 12.25L12.254 16.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
-            <svg id="arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M7.24597 12.25H16.246M16.246 12.25L11.746 7.75M16.246 12.25L11.746 16.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            </symbol>
 
+            <symbol id="question-plus" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="16" fill="currentColor"/>
+                <path d="M16.0251 10.1665L16.0101 21.8332M10.1667 15.9998H21.8334" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
 
+            <symbol id="close" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28.2849 11.7858L11.7646 28.2637M11.7504 11.7504L28.2496 28.2496" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
         </svg>
     </footer>
+    <form class="call">
+        <div class="call__container">
+            <svg class="call__close" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <use href="#close"></use>
+            </svg>
+            <div class="call__form">
+                <h2>Оставьте заявку, и наша команда свяжется с вами для расчета и обсуждения всех деталей!</h2>
+                <div class="call__inputs">
+                    <label>
+                        <input placeholder="Ваше имя" type="text" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                    <label>
+                        <input placeholder="Ваш телефон" type="text" class="phone" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                    <label>
+                        <input placeholder="Вид товара" type="text" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                    <label>
+                        <input placeholder="Количество" type="text" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                </div>
+                <div class="call__button">
+                    <button type="submit" class="main-button" id="call__submit">Отправить</button>
+                    <p>Нажимая кнопку «Отправить»<br/> Вы даёте согласие <span><a href="#">на обработку персональных данных</a></span></p>
+                </div>
+                <div class="call__contacts">
+                    <h3>Или свяжитесь с нами через мессенджеры:</h3>
+                    <div>
+                        <a href="#" class="black-button">
+                            Telegram
+                            <img src="assets/svg/telegram.svg" alt="">
+                        </a>
+                        <a href="#" class="black-button">
+                            WhatsApp
+                            <img src="assets/svg/whatsapp.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="call__success disabled">
+                <h2>Спасибо!<br/> Данные успешно отправлены.</h2>
+                <p>Скоро наш сотрудник с Вами свяжется, ожидайте, пожалуйста!</p>
+            </div>
+        </div>
+    </form>
     <script src="scripts/index.js"></script>
-    <script src="scripts/guarantees.js"></script>
-    <script src="scripts/stages.js"></script>
+    <script src="scripts/cases.js"></script>
 </body>
 </html>
