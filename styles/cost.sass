@@ -2,9 +2,6 @@
 
 // npx sass --watch styles/cost.sass css/cost.css
 
-.under-key
-  background: index.$main-bg
-
 .cost-on-site
   background: index.$main-bg
   display: flex
@@ -206,7 +203,7 @@
   align-items: center
 
   &__container
-    padding: 50px 94px 30px
+    padding: 50px 94px 80px
     display: flex
     flex-direction: column
     align-items: center
@@ -280,6 +277,52 @@
     .delivery-type
       display: flex
       flex-direction: column
+      align-items: center
       gap: 40px
 
+      h2
+        @include index.sub-title
+        line-height: 140%
+
+      .delivery-type__blocks
+        display: flex
+        flex-wrap: wrap
+        gap: 28px
+
+        .delivery-type__block
+          display: flex
+          gap: 10px
+          width: 100%
+          max-width: 692px
+
+          padding: 28px 24px
+          background: index.$white
+          box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+
+          .block-info
+            display: flex
+            flex-direction: column
+            gap: 16px
+            width: 100%
+
+            h3
+              font-size: 28px
+              font-family: "AA Stetica", sans-serif
+              font-weight: 700
+              line-height: 140%
+              color: index.$main-black
+
+            div
+              display: flex
+              flex-direction: column
+              gap: 4px
+
+              p
+                @include index.text-20
+                line-height: 160%
+                color: rgb(124, 130, 137)
+                font-weight: 700
+
+                & span
+                  font-weight: 400
 

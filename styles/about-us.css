@@ -372,6 +372,9 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   align-items: center;
   background: #F4F5F6;
 }
+.breadcrumbs.white {
+  background: #FFFFFF;
+}
 .breadcrumbs__container {
   display: flex;
   align-items: center;
@@ -396,6 +399,9 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   flex-direction: column;
   align-items: center;
   background: #FFFFFF;
+}
+.under-key.gray {
+  background: #F4F5F6;
 }
 .under-key__container {
   display: flex;
