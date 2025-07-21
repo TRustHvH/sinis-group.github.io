@@ -1,5 +1,7 @@
 $font-path: "../assets/fonts"
 
+// npx sass --watch styles/index.sass css/index.css
+
 // Fonts import
 @mixin font($name, $file, $weight: normal, $style: normal)
   @font-face
@@ -381,6 +383,9 @@ footer
   align-items: center
   background: $main-bg
 
+  &.white
+    background: $white
+
   &__container
     display: flex
     align-items: center
@@ -406,6 +411,9 @@ footer
   flex-direction: column
   align-items: center
   background: $white
+
+  &.gray
+    background: $main-bg
 
   &__container
     display: flex

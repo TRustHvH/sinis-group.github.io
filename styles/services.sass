@@ -1,0 +1,56 @@
+@use 'index'
+
+// npx sass --watch styles/services.sass css/services.css
+
+.services
+  background: index.$white
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 58px
+
+    max-width: 1600px
+    width: 100%
+
+    padding: 120px 94px
+
+    h2
+      line-height: 120%
+      @include index.main-title
+
+    .services__item
+      display: flex
+      gap: 28px
+      align-items: center
+
+      .services__item-img
+        position: relative
+        max-width: 706px
+        max-height: 344px
+
+      .services__item-img:before
+        @include index.linear-bg(270deg)
+
+      .services__item-img:nth-child(2):before
+        @include index.linear-bg(90deg)
+
+      .services__item-info
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+        h3
+          @include index.sub-title
+          line-height: 140%
+          color: index.$main-black
+
+        p
+          @include index.text-20
+          line-height: 160%
+          color: index.$main-black
