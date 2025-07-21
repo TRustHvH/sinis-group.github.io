@@ -1,4 +1,6 @@
-@use 'index.sass'
+@use 'index'
+
+// npx sass --watch styles/main.sass css/main.css
 
 .start
   background: url("../assets/img/main-start-bg.png") center no-repeat
@@ -104,7 +106,6 @@
 
       p
         @include index.sub-title
-        color: index.$main-text
         line-height: 140%
         text-align: center
 
@@ -267,7 +268,6 @@
       h2
         @include index.main-title
         line-height: 120%
-        color: index.$main-text
 
       p
         @include index.text-24
@@ -276,6 +276,7 @@
 
     .guarantees__items
       display: flex
+      justify-content: center
       gap: 20px
       width: 100%
       min-height: 285px
@@ -292,8 +293,6 @@
         width: 100%
 
         cursor: pointer
-
-        max-height: 259px
 
         h3
           @include index.text-20
@@ -559,11 +558,7 @@
                   backdrop-filter: blur(11px) opacity(1)
 
               &:before
-                content: ""
-                position: absolute
                 @include index.linear-bg(270deg)
-                width: 100%
-                height: 100%
                 top: 0
                 left: 0
                 z-index: 1
@@ -709,70 +704,6 @@
                 color: index.$main-text
 
 
-.under-key
-  display: flex
-  flex-direction: column
-  align-items: center
-  background: index.$white
-
-  &__container
-    display: flex
-    gap: 28px
-
-    width: 100%
-    max-width: 1600px
-
-    padding: 60px 94px
-
-    .under-key__left
-      display: flex
-      flex-direction: column
-      gap: 20px
-      max-width: 692px
-
-      h2
-        @include index.main-title
-        line-height: 120%
-
-      span
-        color: index.$main-color
-
-      p
-        @include index.text-20
-        line-height: 160%
-        color: index.$main-text
-
-        &.strong
-          font-weight: 700
-
-    .under-key__right
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
-      position: relative
-
-      .right__img
-        width: 100%
-        height: 100%
-        max-width: 692px
-        max-height: 372px
-        position: relative
-
-        &:before
-          @include index.linear-bg(90deg)
-
-        img
-          width: 100%
-          height: 100%
-          object-fit: cover
-
-      .manager
-        position: absolute
-        max-width: 437px
-        bottom: -60px
-
-
 .faq
   background: index.$main-bg
   display: flex
@@ -869,91 +800,3 @@
               @include index.text-16
               color: index.$main-text
               line-height: 24px
-
-
-.contacts
-  background: index.$white
-  display: flex
-  flex-direction: column
-  align-items: center
-
-  &__container
-    display: flex
-    gap: 29px
-
-    max-width: 1600px
-    width: 100%
-
-    padding: 120px 94px
-
-    .contacts-cards
-      display: flex
-      gap: 40px
-
-      .contacts-card
-        display: flex
-        gap: 16px
-        align-items: center
-
-        .card__img-box
-          padding: 13px
-          background: index.$main-black
-          display: flex
-
-        .card__content
-          display: flex
-          flex-direction: column
-          gap: 4px
-
-          p
-            @include index.text-16
-            color: index.$main-text
-            line-height: 24px
-
-            &.strong
-              font-weight: 700
-
-    .contacts__left
-      display: flex
-      flex-direction: column
-      gap: 48px
-
-      .contacts__info
-        display: flex
-        flex-direction: column
-        gap: 20px
-
-        h2
-          @include index.main-title
-          line-height: 120%
-
-        p
-          @include index.text-20
-          line-height: 160%
-          color: index.$main-text
-
-    .contacts__right
-      display: flex
-      justify-content: center
-      align-items: center
-
-      .map
-        display: flex
-        flex-direction: column
-        align-items: center
-        position: relative
-
-        &:before
-          @include index.linear-bg(360deg)
-          height: 40%
-          bottom: 0
-          pointer-events: none
-
-      .contacts-cards
-        padding: 20px
-        gap: 20px
-        background: index.$white
-        width: calc(100% - 40px)
-
-        position: absolute
-        bottom: 20px

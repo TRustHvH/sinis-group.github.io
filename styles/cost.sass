@@ -1,0 +1,285 @@
+@use 'index'
+
+// npx sass --watch styles/cost.sass css/cost.css
+
+.under-key
+  background: index.$main-bg
+
+.cost-on-site
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 60px 94px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 60px
+
+    h2
+      color: index.$main-text
+      max-width: 603px
+      text-align: center
+      @include index.main-title
+
+
+    .cost-on-site__content
+      display: flex
+      flex-direction: column
+      gap: 40px
+
+      & > p
+        color: index.$main-text
+        line-height: 160%
+        max-width: 930px
+        @include index.text-20
+        font-weight: 700
+
+        span.thin
+          font-weight: normal
+
+        span.red
+          color: index.$main-color
+
+      .cost-on-site__items
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 28px
+
+        .cost-on-site__item
+          display: flex
+          flex-direction: column
+          gap: 12px
+          background: index.$white
+          padding: 28px
+          position: relative
+          box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+
+          h3
+            font-size: 28px
+            line-height: 140%
+            font-family: "AA Stetica", sans-serif
+            font-weight: 700
+            color: index.$main-text
+
+          p
+            @include index.text-16
+            line-height: 24px
+            color: index.$main-text
+
+          span
+            position: absolute
+            top: -31px
+            right: 31px
+            font-size: 52px
+            font-family: "AA Stetica", sans-serif
+            font-weight: 700
+            line-height: 120%
+            color: index.$main-color
+
+
+.calculation
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 50px 94px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 60px
+
+    .calculation__title
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 20px
+
+      h2
+        @include index.sub-title
+        line-height: 140%
+        color: index.$main-black
+
+      p
+        @include index.text-24
+        line-height: 140%
+        color: index.$main-black
+
+    .calculation__content
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 60px
+      width: 100%
+
+      .calculation__about
+        display: flex
+        gap: 28px
+
+        .calculation__about-item
+          display: flex
+          flex-direction: column
+          gap: 16px
+
+          .item-img
+            width: 572px
+            height: 170px
+
+            img
+              width: 100%
+              object-fit: cover
+              height: 100%
+
+          .item-text
+            display: flex
+            flex-direction: column
+            gap: 16px
+
+            h3
+              font-size: 28px
+              font-family: "AA Stetica", sans-serif
+              font-weight: 700
+              line-height: 140%
+              color: index.$main-text
+              text-align: center
+
+            ul
+              padding-left: 32px
+              display: flex
+              flex-direction: column
+              gap: 16px
+
+              & li
+                @include index.text-20
+                line-height: 160%
+                color: index.$main-text
+                position: relative
+
+                &:before
+                  content: url("../assets/svg/check-one.svg")
+                  position: absolute
+                  top: 4px
+                  left: -32px
+                  width: 24px
+                  height: 24px
+
+              &.bad li:before
+                content: url("../assets/svg/close-one.svg")
+
+      .calculation__call
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        gap: 40px
+        width: 100%
+        background-color: index.$main-color
+        padding: 40px
+        position: relative
+
+        img
+          position: absolute
+          left: 23px
+          top: -17px
+
+        p
+          font-size: 28px
+          font-family: "AA Stetica", sans-serif
+          font-weight: 700
+          line-height: 140%
+          color: index.$white
+
+
+.delivery
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 50px 94px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 60px
+
+    .delivery-cost
+      display: flex
+      flex-direction: column
+      gap: 40px
+
+      .delivery-cost__title
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 20px
+
+        h2
+          @include index.sub-title
+          line-height: 140%
+
+        p
+          @include index.text-24
+          line-height: 140%
+          color: index.$main-text
+
+          & span
+            color: index.$main-color
+            font-weight: 700
+
+      .delivery-cost__blocks
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        column-gap: 8px
+        row-gap: 32px
+
+        .delivery-cost__block
+          display: flex
+          align-items: center
+          justify-content: center
+
+          padding: 28px 24px
+
+          background: index.$white
+          box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+
+          position: relative
+
+          max-width: 452px
+          width: 100%
+
+          &:nth-child(4), &:nth-child(5)
+            max-width: 692px
+            width: 100%
+
+          svg
+            position: absolute
+            top: -16px
+            left: 24px
+
+          p
+            @include index.text-16
+            font-weight: 500
+            line-height: 130%
+            color: index.$main-text
+
+
+    .delivery-type
+      display: flex
+      flex-direction: column
+      gap: 40px
+
+

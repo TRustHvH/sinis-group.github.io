@@ -1,0 +1,349 @@
+@use 'index'
+
+// npx sass --watch styles/about-us.sass css/about-us.css
+
+.about
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 120px 94px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 72px
+
+    h2
+      @include index.main-title
+      color: index.$main-black
+
+    .about__our-mission
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      gap: 16px
+
+      padding: 40px 28px
+      margin-top: -20px
+      width: 100%
+      position: relative
+
+      background: index.$white
+
+      h3
+        @include index.text-24
+        font-weight: 400
+        line-height: 140%
+        color: index.$main-text
+
+      p
+        @include index.sub-title
+        line-height: 140%
+        text-align: center
+
+      .quotation-first, .quotation-second
+        position: absolute
+
+      .quotation-first
+        top: -46px
+        left: 42px
+
+      .quotation-second
+        bottom: -46px
+        right: 42px
+        rotate: 180deg
+
+    .about__info
+      display: flex
+      flex-direction: column
+      gap: 24px
+
+      &-item
+        display: flex
+        gap: 28px
+
+        &.reversed
+          flex-direction: row-reverse
+
+          .info-item_img:before
+            @include index.linear-bg(270deg)
+
+
+        .info-item_img
+          max-width: 572px
+          width: 100%
+
+          position: relative
+
+          img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+          &:before
+            @include index.linear-bg(90deg)
+
+
+        .info-item_text
+          display: flex
+          flex-direction: column
+          gap: 12px
+
+          max-width: 812px
+
+          p
+            @include index.text-20
+            line-height: 160%
+            color: index.$main-black
+
+            &.strong
+              font-weight: 700
+
+            & span
+              font-weight: 700
+
+
+.we-offer
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 50px 94px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 60px
+
+    h2
+      @include index.sub-title
+      line-height: 140%
+      color: index.$main-black
+
+    .we-offer__blocks
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      column-gap: 8px
+      row-gap: 32px
+
+      .we-offer__block
+        display: flex
+        align-items: center
+        justify-content: center
+
+        padding: 28px 24px
+
+        background: index.$white
+        box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+
+        position: relative
+
+        max-width: 332px
+        width: 100%
+
+        &:nth-child(5), &:nth-child(6), &:nth-child(7)
+          max-width: 452px
+          width: 100%
+
+        svg
+          position: absolute
+          top: -16px
+          left: 24px
+
+        p
+          @include index.text-16
+          font-weight: 500
+          line-height: 130%
+          color: index.$main-text
+
+
+.why-we
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 50px 94px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 40px
+
+    .why-we__title
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 20px
+
+      h2
+        @include index.sub-title
+        line-height: 140%
+        color: index.$main-black
+
+      p
+        @include index.text-24
+        line-height: 140%
+        color: index.$main-black
+
+    .why-we__items
+      display: flex
+      justify-content: center
+      gap: 28px
+      width: 100%
+
+      .why-we__item
+        display: flex
+        flex-direction: column
+        gap: 12px
+
+        background: index.$white
+        box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+        padding: 28px
+
+        max-width: 452px
+        width: 100%
+
+        h3
+          @include index.text-20
+          line-height: 160%
+          font-weight: 700
+          color: index.$main-text
+
+        svg
+          color: index.$main-color
+
+        p
+          @include index.text-16
+          line-height: 24px
+          color: index.$main-text
+
+
+.our-value
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 50px 94px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 40px
+
+    h2
+      @include index.sub-title
+      line-height: 140%
+      color: index.$main-black
+
+    .our-value__items
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 28px
+
+      .our-value__item
+        display: flex
+        flex-direction: column
+        gap: 12px
+        background: index.$white
+        padding: 28px
+        position: relative
+        box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+
+        h3
+          @include index.sub-title
+          line-height: 140%
+
+        p
+          @include index.text-16
+          line-height: 24px
+          color: index.$main-text
+
+        span
+          position: absolute
+          top: -31px
+          right: 31px
+          font-size: 52px
+          font-family: "AA Stetica", sans-serif
+          font-weight: 700
+          line-height: 120%
+          color: index.$main-color
+
+
+.our-promises
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 50px 94px 80px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 40px
+
+    h2
+      @include index.sub-title
+      line-height: 140%
+      color: index.$main-black
+
+    & > p
+      width: 100%
+      text-align: left
+      @include index.text-20
+      line-height: 160%
+      font-weight: 700
+      color: index.$main-text
+
+      & span
+        color: index.$main-color
+
+    .our-promises__items
+      display: flex
+      gap: 28px
+
+      .our-promises__item
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 12px
+
+        max-width: 452px
+        width: 100%
+
+        background: index.$white
+        padding: 28px
+        box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+
+        h3
+          @include index.sub-title
+          line-height: 140%
+          color: index.$main-black
+
+        p
+          @include index.text-16
+          line-height: 24px
+          color: index.$main-text
+          text-align: center

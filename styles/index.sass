@@ -1,5 +1,3 @@
-// npx sass --watch styles/main.sass css/main.css
-
 $font-path: "../assets/fonts"
 
 // Fonts import
@@ -86,6 +84,7 @@ $white: #FFFFFF
   &.round
     padding: 20px
 
+
 .main-button
   background: $main-color
 
@@ -101,6 +100,7 @@ $white: #FFFFFF
 
   &.disabled
     display: none
+
 
 html, body
   padding: 0
@@ -167,6 +167,7 @@ header
           font-weight: bold
           color: $white
           line-height: 22px
+
 
 footer
   background: $main-text
@@ -372,3 +373,181 @@ footer
         @include text-20()
         line-height: 160%
         color: $main-text
+
+
+.breadcrumbs
+  display: flex
+  flex-direction: column
+  align-items: center
+  background: $main-bg
+
+  &__container
+    display: flex
+    align-items: center
+    gap: 8px
+
+    width: 100%
+    max-width: 1600px
+
+    padding: 20px 92px
+
+    a
+      @include text-16
+      line-height: 24px
+      color: $main-text
+      display: flex
+
+      &.disabled
+        color: #7C8289
+
+
+.under-key
+  display: flex
+  flex-direction: column
+  align-items: center
+  background: $white
+
+  &__container
+    display: flex
+    gap: 28px
+
+    width: 100%
+    max-width: 1600px
+
+    padding: 60px 94px
+
+    .under-key__left
+      display: flex
+      flex-direction: column
+      gap: 20px
+      max-width: 692px
+
+      h2
+        line-height: 120%
+        @include main-title
+
+      span
+        color: $main-color
+
+      p
+        @include text-20
+        line-height: 160%
+        color: $main-text
+
+        &.strong
+          font-weight: 700
+
+    .under-key__right
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      position: relative
+
+      .right__img
+        width: 100%
+        height: 100%
+        max-width: 692px
+        max-height: 372px
+        position: relative
+
+        &:before
+          @include linear-bg(90deg)
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+      .manager
+        position: absolute
+        max-width: 437px
+        bottom: -60px
+
+
+.contacts
+  background: $white
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    display: flex
+    gap: 29px
+
+    max-width: 1600px
+    width: 100%
+
+    padding: 120px 94px
+
+    .contacts-cards
+      display: flex
+      gap: 40px
+
+      .contacts-card
+        display: flex
+        gap: 16px
+        align-items: center
+
+        .card__img-box
+          padding: 13px
+          background: $main-black
+          display: flex
+
+        .card__content
+          display: flex
+          flex-direction: column
+          gap: 4px
+
+          p
+            @include text-16()
+            color: $main-text
+            line-height: 24px
+
+            &.strong
+              font-weight: 700
+
+    .contacts__left
+      display: flex
+      flex-direction: column
+      gap: 48px
+
+      .contacts__info
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+        h2
+          line-height: 120%
+          @include main-title
+
+        p
+          @include text-20
+          line-height: 160%
+          color: $main-text
+
+    .contacts__right
+      display: flex
+      justify-content: center
+      align-items: center
+
+      .map
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
+
+        &:before
+          @include linear-bg(360deg)
+          height: 40%
+          bottom: 0
+          pointer-events: none
+
+      .contacts-cards
+        padding: 20px
+        gap: 20px
+        background: $white
+        width: calc(100% - 40px)
+
+        position: absolute
+        bottom: 20px
