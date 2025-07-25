@@ -34,7 +34,7 @@ $font-path: "../assets/fonts"
   font-size: 44px
   font-weight: 700
 
-  @media screen and (max-width: 600px)
+  @media screen and (max-width: 764px)
     font-size: 30px
 
 @mixin sub-title()
@@ -83,8 +83,26 @@ $white: #FFFFFF
 
   user-select: none
 
+  @media screen and (max-width: 764px)
+    font-size: 14px
+
   &.round
     padding: 20px
+
+
+.scroll-on-drag
+  overflow-x: auto
+  white-space: nowrap
+  cursor: grab
+  user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+
+  &.grabbing
+    cursor: grabbing
+
+  &::-webkit-scrollbar
+    display: none
 
 
 .main-button
@@ -92,6 +110,7 @@ $white: #FFFFFF
 
   &:hover
     box-shadow: 0 8px 20px 0 rgba(226, 31, 47, 0.3)
+    background: #F22738
 
 
 .black-button
@@ -136,11 +155,55 @@ header
     padding: 24px 94px
 
     display: flex
-    gap: 141px
     align-items: center
-    justify-content: center
+    justify-content: space-between
     width: 100%
     max-width: 1600px
+    position: relative
+
+    @media screen and (max-width: 1152px)
+      padding: 24px 12px
+
+
+    @media screen and (max-width: 764px)
+      padding: 20px 15px
+
+      .header__link-menu, .header__call-me
+        display: none !important
+
+    .header__bars
+      display: flex
+      flex-direction: column
+      gap: 8px
+      padding: 10px 6.5px
+      transition: .2s linear
+      cursor: pointer
+
+      &.active
+        .bar:nth-child(1)
+          transform: rotate(-45deg) translate(-7px, 7px)
+
+        .bar:nth-child(2)
+          opacity: 0
+
+        .bar:nth-child(3)
+          transform: rotate(45deg) translate(-7px, -7px)
+
+      .bar
+        width: 30px
+        height: 2px
+        border-radius: 30px
+        background: $white
+        transition: transform .1s linear
+
+      @media screen and (max-width: 764px)
+        display: flex
+
+    .header__bars, .header__mobile
+      display: none
+
+      @media screen and (max-width: 764px)
+        display: flex
 
     .header__link-menu
       display: flex
@@ -150,7 +213,14 @@ header
         color: $white
         @include text-18()
         line-height: 22px
+        align-content: center
 
+        &:hover
+          background: $main-color
+
+
+        @media screen and (max-width: 1152px)
+          padding: 5px 10px
 
     .header__call-me
       display: flex
@@ -170,6 +240,69 @@ header
           color: $white
           line-height: 22px
 
+          @media screen and (max-width: 1152px)
+              font-size: 14px
+
+    .header__mobile
+      max-height: 0
+      background: $main-text
+      position: absolute
+      top: 84px
+      left: 0
+      width: 100%
+      transition: .2s linear
+      overflow: hidden
+      z-index: 9999
+
+      &.active
+        max-height: 600px
+
+      &-menu
+        display: flex
+        flex-direction: column
+        gap: 18px
+        padding: 30px 15px 20px
+        width: 100%
+
+        .header__mobile-links
+          display: flex
+          flex-direction: column
+          gap: 28px
+
+          a
+            @include text-16
+            font-weight: 500
+            line-height: 22px
+            color: $white
+
+        .header__mobile-call-me
+          display: flex
+          flex-direction: column
+          gap: 20px
+
+          span
+            width: 100%
+            height: 1px
+            background: #7C8289
+
+          a
+            display: flex
+            gap: 6px
+
+            @include text-18()
+            font-weight: 700
+            color: $white
+            line-height: 22px
+
+            svg
+              color: $main-color
+
+          .main-button
+            width: 100%
+            justify-content: center
+
+
+
 
 footer
   background: $main-text
@@ -186,6 +319,16 @@ footer
     padding: 40px 94px
     margin-top: auto
 
+    @media screen and (max-width: 1152px)
+      &
+        padding:  20px 12px
+        gap: 8px
+        justify-content: space-between
+
+        .footer__social
+          gap: 8px!important
+
+
     .footer__company-info
       display: flex
       flex-direction: column
@@ -200,6 +343,10 @@ footer
         display: flex
         align-items: flex-end
         gap: 5px
+
+        @media screen and (max-width: 1152px)
+            align-items: flex-start
+            font-size: 18px
 
         width: 100%
         @include text-20()
@@ -225,6 +372,9 @@ footer
         @include text-16()
         line-height: 24px
         color: $white
+
+        @media screen and (max-width: 1152px)
+            font-size: 14px
 
 
 .call
@@ -424,11 +574,25 @@ footer
 
     padding: 60px 94px
 
+    @media screen and (max-width: 1152px)
+      &
+        padding:  60px 12px
+
     .under-key__left
       display: flex
       flex-direction: column
       gap: 20px
       max-width: 692px
+
+      @media screen and (max-width: 1366px)
+        &
+          max-width: 580px
+
+        h2
+          font-size: 36px!important
+
+        p
+          font-size: 18px!important
 
       h2
         line-height: 120%
@@ -451,6 +615,7 @@ footer
       justify-content: center
       align-items: center
       position: relative
+      min-width: 400px
 
       .right__img
         width: 100%
@@ -488,6 +653,31 @@ footer
 
     padding: 120px 94px
 
+    @media screen and (max-width: 1152px)
+      &
+        padding:  60px 12px
+        .contacts-cards
+          padding: 15px!important
+          .contacts-card
+            gap: 10px!important
+            .card__content
+              p
+                font-size: 12px!important
+                line-height: 14px!important
+
+
+        .contacts__left
+          max-width: 450px!important
+
+          .contacts__info
+
+            h2
+              font-size: 36px!important
+
+            p
+              font-size: 18px!important
+
+
     .contacts-cards
       display: flex
       gap: 40px
@@ -519,6 +709,7 @@ footer
       display: flex
       flex-direction: column
       gap: 48px
+      max-width: 571px
 
       .contacts__info
         display: flex
@@ -538,12 +729,20 @@ footer
       display: flex
       justify-content: center
       align-items: center
+      width: 100%
 
       .map
         display: flex
         flex-direction: column
         align-items: center
         position: relative
+        width: 100%
+        max-width: 812px
+        min-width: 462px
+
+        iframe
+          width: 100%
+          max-width: 812px
 
         &:before
           @include linear-bg(360deg)
@@ -559,3 +758,6 @@ footer
 
         position: absolute
         bottom: 20px
+
+
+

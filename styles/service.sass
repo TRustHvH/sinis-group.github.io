@@ -1,0 +1,118 @@
+@use 'index'
+
+// npx sass --watch styles/service.sass css/service.css
+
+.service
+  background: index.$main-bg
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    display: flex
+    flex-direction: column
+    gap: 58px
+
+    max-width: 1600px
+    width: 100%
+
+    padding: 40px 94px 80px
+
+    h2
+      @include index.main-title
+
+    .service__content
+      display: flex
+      flex-direction: column
+      gap: 28px
+
+      .service__content-text-first, .service__content-text-second
+        display: flex
+        gap: 28px
+
+        .text
+          display: flex
+          flex-direction: column
+          gap: 20px
+
+          max-width: 812px
+
+          h3
+            font-size: 28px
+            font-family: "AA Stetica", sans-serif
+            font-weight: 700
+            line-height: 140%
+            color: index.$main-black
+
+          p, li
+            @include index.text-20
+            line-height: 160%
+            color: index.$main-black
+
+          ul
+            display: flex
+            flex-direction: column
+            padding-left: 24px
+
+            &.number li
+              list-style: decimal
+
+            &.dot li
+              list-style: disc
+
+        .text-divider
+          display: flex
+          flex-direction: column
+          gap: 28px
+
+      .service__content-text-first
+
+        .image
+          width: 572px
+          height: 310px
+          position: relative
+
+          &:before
+            @include index.linear-bg(90deg)
+
+          img
+            width: 100%
+            object-fit: cover
+            height: 100%
+
+      .service__content-text-second
+
+        .more-services
+          display: flex
+          flex-direction: column
+          gap: 20px
+
+          padding: 20px
+          background: index.$white
+          box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+          height: fit-content
+          max-width: 572px
+          width: 100%
+
+          div
+            display: flex
+            flex-direction: column
+            gap: 12px
+
+          h3
+            @include index.text-24
+            line-height: 140%
+            color: index.$main-black
+
+          a
+            color: index.$main-color
+            @include index.text-16
+            font-weight: 500
+            line-height: 130%
+            display: flex
+            gap: 8px
+            align-items: center
+
+
+
+

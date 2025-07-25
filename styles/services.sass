@@ -20,19 +20,70 @@
 
     padding: 120px 94px
 
+    @media screen and (max-width: 1152px)
+      padding:  60px 12px 52px
+
+    @media screen and (max-width: 764px)
+      padding: 60px 15px
+      gap: 32px
+
+      & > div
+        display: flex
+        flex-direction: column
+        gap: 28px
+
     h2
       line-height: 120%
       @include index.main-title
+
+      @media screen and (max-width: 764px)
+        text-align: center
 
     .services__item
       display: flex
       gap: 28px
       align-items: center
 
+      @media screen and (max-width: 764px)
+        flex-direction: column
+        gap: 8px
+
+        .services__item-info
+          gap: 8px!important
+
+          .main-button
+            width: 100% !important
+            justify-content: center
+
+        h3
+          font-size: 24px!important
+
+        p
+          font-size: 14px!important
+
+        &:nth-child(2)
+          flex-direction: column-reverse
+
       .services__item-img
         position: relative
-        max-width: 706px
-        max-height: 344px
+        width: 706px
+        height: 344px
+
+        @media screen and (max-width: 1152px)
+          width: 530px
+          height: 360px
+
+        @media screen and (max-width: 764px)
+          width: 100%
+          height: 100%
+
+          &:before
+            height: 98%!important
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
 
       .services__item-img:before
         @include index.linear-bg(270deg)
@@ -45,6 +96,16 @@
         flex-direction: column
         gap: 20px
 
+        max-width: 678px
+
+        @media screen and (max-width: 1366px)
+          &
+            max-width: 553px
+
+        @media screen and (max-width: 1152px)
+          &
+            max-width: 502px
+
         h3
           @include index.sub-title
           line-height: 140%
@@ -54,3 +115,10 @@
           @include index.text-20
           line-height: 160%
           color: index.$main-black
+
+        @media screen and (max-width: 1366px)
+          p
+            font-size: 16px
+
+          h3
+            font-size: 28px

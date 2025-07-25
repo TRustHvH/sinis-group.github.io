@@ -11,20 +11,42 @@
   flex-direction: column
   align-items: center
 
+  @media screen and (max-width: 764px)
+    background: url(../assets/img/main-start-bg.png) 80% no-repeat
+    background-size: cover
+
+    &__container
+      padding: 20px 16px 29px
+
   &__container
     padding: 106px 94px 40px
 
     display: flex
     flex-direction: column
     gap: 136px
+    position: relative
 
     max-width: 1600px
     width: 100%
+
+    @media screen and (max-width: 1152px)
+      padding: 106px 12px 40px
+
+    @media screen and (max-width: 764px)
+      padding: 20px 16px 29px
+
 
     .start__title
       display: flex
       flex-direction: column
       gap: 26px
+
+      @media screen and (max-width: 764px)
+        gap: 332px
+
+        h1
+          font-size: 34px!important
+          max-width: 390px!important
 
       h1
         font-family: "AA Stetica", sans-serif
@@ -42,8 +64,22 @@
 
     .start__blocks
       display: flex
-      justify-content: space-between
       flex-wrap: wrap
+      gap: 28px
+
+      @media screen and (max-width: 764px)
+        position: absolute
+        top: 629px
+        left: 0
+        justify-content: center
+        gap: 12px
+
+        .start__block
+          padding: 16px!important
+          gap: 12px
+
+          svg
+            position: static!important
 
       .start__block
         display: flex
@@ -67,6 +103,9 @@
           line-height: 130%
           color: index.$main-text
 
+          @media screen and (max-width: 764px)
+            font-size: 14px
+
 
 .about
   background: index.$main-bg
@@ -82,6 +121,12 @@
     justify-content: center
     max-width: 1600px
     width: 100%
+
+    @media screen and (max-width: 1152px)
+      padding:  60px 12px 52px
+
+    @media screen and (max-width: 764px)
+      padding: 372px 15px 60px
 
     h2
       @include index.main-title
@@ -100,6 +145,15 @@
 
       background: index.$white
 
+      @media screen and (max-width: 764px)
+        padding: 16px 16px 28px
+
+        h3
+          font-size: 22px!important
+
+        p
+          font-size: 20px!important
+
       h3
         @include index.text-24
         font-weight: 400
@@ -114,14 +168,26 @@
       .quotation-first, .quotation-second
         position: absolute
 
+        @media screen and (max-width: 764px)
+          width: 56px
+          height: 39px
+
       .quotation-first
         top: -46px
         left: 42px
+
+        @media screen and (max-width: 764px)
+          top: -20px
+          left: 16px
 
       .quotation-second
         bottom: -46px
         right: 42px
         rotate: 180deg
+
+        @media screen and (max-width: 764px)
+          bottom: -20px
+          right: 20px
 
     .about__info
       display: flex
@@ -132,16 +198,40 @@
 
       margin-top: 72px
 
+      @media screen and (max-width: 764px)
+        margin-top: 60px
+        gap: 20px
+
       .about__info-top-item
         display: flex
         gap: 28px
 
+        @media screen and (max-width: 764px)
+          flex-direction: column
+          gap: unset
+
         .about__info-left-photo
-          max-width: 692px
-          width: 100%
-          max-height: 414px
-          height: 100%
+          width: 692px
+          height: 414px
           position: relative
+          min-width: 600px
+
+          img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+          @media screen and (max-width: 1366px)
+            width: 600px
+
+          @media screen and (max-width: 764px)
+            width: 100%
+            height: 100%
+            min-width: unset
+
+            &:before
+              height: 98%!important
+
 
         .about__info-left-photo:before
           @include index.linear-bg(270deg)
@@ -152,18 +242,35 @@
           gap: 28px
           padding: 40px 40px 40px 0
 
+          max-width: 720px
+
+          @media screen and (max-width: 764px)
+            padding: 20px 16px
+
+            h4, p
+              font-size: 16px!important
+
+
           h4, p
             color: index.$main-black
             @include index.text-20
             line-height: 140%
 
+
           h4
             font-weight: 700
+
+          @media screen and (max-width: 1366px)
+            p
+              font-size: 16px
 
       .about__info-items
         display: flex
         flex-wrap: wrap
         gap: 28px
+
+        @media screen and (max-width: 764px)
+          gap: 16px
 
         .about__info-item
           display: flex
@@ -175,6 +282,15 @@
           width: 100%
           max-width: 692px
 
+          @media screen and (max-width: 764px)
+            gap: 8px
+
+            h4
+              font-size: 24px!important
+
+            p
+              font-size: 14px!important
+
           h4
             @include index.sub-title
             line-height: 140%
@@ -184,6 +300,11 @@
             @include index.text-16
             color: index.$main-black
             line-height: 24px
+
+          @media screen and (max-width: 1366px)
+            &
+              max-width: unset
+
 
       .about__info-top-item, .about__info-item
         background: index.$white
@@ -207,11 +328,25 @@
 
     padding: 120px 94px
 
+    @media screen and (max-width: 1152px)
+      padding:  60px 12px
+
+    @media screen and (max-width: 764px)
+      padding: 60px 0 60px 15px
+      gap: 28px
+
     .guarantees__title
       display: flex
       flex-direction: column
       align-items: center
       gap: 12px
+
+      @media screen and (max-width: 764px)
+        padding-right: 15px
+
+        p
+          font-size: 22px!important
+          text-align: center
 
       h2
         line-height: 120%
@@ -229,6 +364,14 @@
       width: 100%
       min-height: 285px
 
+      @media screen and (max-width: 1366px)
+        justify-content: unset
+        min-height: unset
+        gap: 12px
+
+      @media screen and (max-width: 764px)
+        padding-right: 15px
+
       .guarantees__item
         display: flex
         flex-direction: column
@@ -239,8 +382,31 @@
 
         max-width: 309px
         width: 100%
+        max-height: 285px
+        height: 285px
 
         cursor: pointer
+
+        @media screen and (max-width: 764px)
+          gap: 8px
+          padding: 16px
+          min-width: 302px
+          max-height: 204px
+          pointer-events: none
+
+          p
+            opacity: 1!important
+            font-size: 14px!important
+            max-width: 270px
+            overflow: unset!important
+            white-space: wrap
+            line-height: 140% !important
+
+          svg
+            min-width: 48px
+            max-width: 48px!important
+            max-height: 48px!important
+            min-height: 48px!important
 
         h3
           @include index.text-20
@@ -249,11 +415,18 @@
 
         svg
           color: index.$main-color
+          max-width: 120px
+          width: 100%
+          height: 100%
+          max-height: 120px
+          transition: .2s linear
 
         p
-          display: none
+          display: block
           @include index.text-16
           line-height: 24px
+          opacity: 0
+          overflow: hidden
 
       .guarantees__item:hover
         max-width: 426px
@@ -270,12 +443,12 @@
 
         svg
           color: index.$white
-          width: 78px
-          height: 78px
+          max-width: 78px
+          max-height: 78px
 
         p
-          display: block
           color: index.$white
+          opacity: 1
 
 
 .work-stages
@@ -296,6 +469,13 @@
 
     padding: 100px 94px 120px
 
+    @media screen and (max-width: 1152px)
+      padding:  50px 12px 60px
+
+    @media screen and (max-width: 764px)
+      padding: 60px 15px
+      gap: 32px
+
     .work-stages__title
       display: flex
       flex-direction: column
@@ -309,11 +489,21 @@
         @include index.text-24
         line-height: 140%
 
+        @media screen and (max-width: 764px)
+          font-size: 22px
+          text-align: center
+
     .work-stages__cases
       display: flex
       flex-direction: column
       gap: 70px
       width: 100%
+      height: 421px
+
+      position: relative
+
+      @media screen and (max-width: 764px)
+        height: 636px
 
       .cases__car-stages
         display: flex
@@ -322,6 +512,9 @@
         align-items: center
         justify-content: space-between
         height: 50px
+
+        @media screen and (max-width: 764px)
+          display: none
 
         &:before
           content: ""
@@ -348,12 +541,33 @@
           left: 0
           transition: .2s ease-in
 
+          @media screen and (max-width: 1152px)
+            &
+              width: 100px
+
       .work-stages__case
         display: flex
         gap: 28px
 
+        opacity: 1
+        transition: .4s linear
+
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 85px
+
+        @media screen and (max-width: 764px)
+          top: 0
+          flex-direction: column
+
+          .case__img
+            width: 100%!important
+            height: unset!important
+
         &.disabled
-          display: none
+          opacity: 0
+          pointer-events: none
 
         .case__img
           width: 452px
@@ -366,6 +580,7 @@
           img
             width: 100%
             height: 100%
+            object-fit: cover
 
         .case__info
           width: 100%
@@ -373,6 +588,10 @@
           display: flex
           flex-direction: column
           gap: 39px
+          height: fit-content
+
+          @media screen and (max-width: 1152px)
+            max-width: 600px
 
           .case__text
             display: flex
@@ -383,6 +602,10 @@
               @include index.text-20
               line-height: 160%
               color: index.$main-text
+
+              @media screen and (max-width: 764px)
+                font-size: 16px
+
 
             div
               display: flex
@@ -399,6 +622,9 @@
                 text-transform: uppercase
                 color: index.$white
 
+                @media screen and (max-width: 764px)
+                  font-size: 12px
+
               h3
                 font-size: 28px
                 font-family: "AA Stetica", sans-serif
@@ -406,10 +632,16 @@
                 line-height: 140%
                 color: index.$main-text
 
+                @media screen and (max-width: 764px)
+                  font-size: 20px
+
           .case__nav-buttons
             display: flex
             gap: 12px
             justify-content: flex-end
+
+            @media screen and (max-width: 764px)
+              justify-content: flex-start
 
 
 .faq
@@ -429,6 +661,10 @@
     width: 100%
 
     padding: 120px 94px
+
+    @media screen and (max-width: 1152px)
+      &
+        padding:  60px 12px
 
     .faq__title
       display: flex
