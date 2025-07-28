@@ -2,6 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>China Trade | О нас</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/about-us.css">
@@ -10,28 +11,54 @@
 </head>
 <body>
     <header>
-        <div class="header__container">
-            <a href="index.html">
-                <img src="assets/svg/logo.svg" alt="logo">
+    <div class="header__container">
+        <a href="index.html">
+            <img src="assets/svg/logo.svg" alt="logo">
+        </a>
+        <div class="header__link-menu">
+            <a href="">О нас</a>
+            <a href="">Услуги</a>
+            <a href="">Кейсы</a>
+            <a href="">Цены</a>
+            <a href="">Контакты</a>
+        </div>
+        <div class="header__call-me">
+            <a href="tel:+375293666236" class="header__call-me-phone-number">
+                <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <use href="#phone"></use>
+                </svg>
+                <p>+375 (29) 366-62-36</p>
             </a>
-            <div class="header__link-menu">
-                <a href="">О нас</a>
-                <a href="">Услуги</a>
-                <a href="">Кейсы</a>
-                <a href="">Цены</a>
-                <a href="">Контакты</a>
-            </div>
-            <div class="header__call-me">
-                <a href="tel:+375293666236" class="header__call-me-phone-number">
-                    <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <use href="#phone"></use>
-                    </svg>
-                    <p>+375 (29) 366-62-36</p>
-                </a>
-                <button class="main-button open-form">Заказать звонок</button>
+            <button class="main-button open-form">Заказать звонок</button>
+        </div>
+        <div class="header__bars">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="header__mobile">
+            <div class="header__mobile-menu">
+                <div class="header__mobile-links">
+                    <a href="#">О нас</a>
+                    <a href="#">Услуги</a>
+                    <a href="#">Кейсы</a>
+                    <a href="#">Цены</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <div class="header__mobile-call-me">
+                    <span></span>
+                    <a href="tel:+375293666236">
+                        <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#phone"></use>
+                        </svg>
+                        +375 (29) 366-62-36
+                    </a>
+                    <button class="main-button open-form">Заказать звонок</button>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
     <main>
         <div class="breadcrumbs">
             <div class="breadcrumbs__container">
@@ -141,9 +168,9 @@
             <div class="why-we__container">
                 <div class="why-we__title">
                     <h2>Почему выбирают нас?</h2>
-                    <p>Почему выбирают нас?</p>
+                    <p>Надежность. Экспертность. Комфорт.</p>
                 </div>
-                <div class="why-we__items">
+                <div class="why-we__items scroll-on-drag">
                     <div class="why-we__item">
                         <svg class="why-we__item-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <use href="#shield"></use>
@@ -268,6 +295,24 @@
                             <div class="card__content">
                                 <p>Телефон:</p>
                                 <p class="strong">+375 (29) 366-62-36</p>
+                            </div>
+                        </div>
+                        <div class="contacts-card">
+                            <div class="card__img-box">
+                                <img src="assets/svg/map.svg" alt="map">
+                            </div>
+                            <div class="card__content">
+                                <p>Адрес:</p>
+                                <p class="strong">г.Минск, ул. Притыцкого д.2к3y</p>
+                            </div>
+                        </div>
+                        <div class="contacts-card">
+                            <div class="card__img-box">
+                                <img src="assets/svg/time.svg" alt="time">
+                            </div>
+                            <div class="card__content">
+                                <p>Время работы:</p>
+                                <p class="strong">пн-пт: 9:00 - 18:00 | сб-вс: выходной</p>
                             </div>
                         </div>
                     </div>
@@ -465,5 +510,6 @@
         </div>
     </form>
     <script src="scripts/index.js"></script>
+    <script src="scripts/scroll.js"></script>
 </body>
 </html>

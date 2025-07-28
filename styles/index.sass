@@ -99,7 +99,7 @@ $white: #FFFFFF
   -ms-user-select: none
 
   &.grabbing
-    cursor: grabbing
+    cursor: grabbing!important
 
   &::-webkit-scrollbar
     display: none
@@ -417,10 +417,10 @@ footer
     padding: 40px
 
     @media screen and (max-width: 764px)
-      padding: 60px 15px
+      padding: 60px 16px
 
-      .call__form.disabled > &
-        padding: 15px
+      &:has(.call__form.disabled)
+        padding: 16px
 
     position: relative
 
@@ -469,7 +469,7 @@ footer
             max-width: unset
 
             input
-              max-width: 301px
+              max-width: 300px
 
           img
             opacity: 0
@@ -564,14 +564,24 @@ footer
       flex-direction: column
       gap: 20px
       position: relative
+      pointer-events: none
+
+      @media screen and (max-width: 764px)
+        gap: 8px
 
       &.disabled
         display: none
+
+      h2
+        width: fit-content
 
       p
         @include text-20()
         line-height: 160%
         color: $main-text
+
+        @media screen and (max-width: 764px)
+          font-size: 16px!important
 
 
 .breadcrumbs
@@ -592,6 +602,9 @@ footer
     max-width: 1600px
 
     padding: 20px 92px
+
+    @media screen and (max-width: 764px)
+      padding: 12px 15px
 
     a
       @include text-16

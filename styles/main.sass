@@ -329,10 +329,10 @@
     padding: 120px 94px
 
     @media screen and (max-width: 1152px)
-      padding:  60px 12px
+      padding: 60px 0
 
     @media screen and (max-width: 764px)
-      padding: 60px 0 60px 15px
+      padding: 60px 0
       gap: 28px
 
     .guarantees__title
@@ -341,8 +341,11 @@
       align-items: center
       gap: 12px
 
+      @media screen and (max-width: 1152px)
+        padding: 0 12px
+
       @media screen and (max-width: 764px)
-        padding-right: 15px
+        padding: 0 15px
 
         p
           font-size: 22px!important
@@ -369,8 +372,11 @@
         min-height: unset
         gap: 12px
 
+      @media screen and (max-width: 1152px)
+        padding: 0 12px
+
       @media screen and (max-width: 764px)
-        padding-right: 15px
+        padding: 0 15px
 
       .guarantees__item
         display: flex
