@@ -252,7 +252,7 @@ header
       width: 100%
       transition: .2s linear
       overflow: hidden
-      z-index: 9999
+      z-index: 5
 
       &.active
         max-height: 600px
@@ -302,8 +302,6 @@ header
             justify-content: center
 
 
-
-
 footer
   background: $main-text
   display: flex
@@ -320,13 +318,16 @@ footer
     margin-top: auto
 
     @media screen and (max-width: 1152px)
-      &
-        padding:  20px 12px
-        gap: 8px
-        justify-content: space-between
+      padding: 20px 12px
+      gap: 8px
+      justify-content: space-between
 
-        .footer__social
-          gap: 8px!important
+      .footer__social
+        gap: 8px!important
+
+    @media screen and (max-width: 764px)
+      flex-direction: column
+      gap: 20px
 
 
     .footer__company-info
@@ -334,10 +335,14 @@ footer
       flex-direction: column
       gap: 4px
 
+      @media screen and (max-width: 764px)
+        gap: 20px
+
       .footer__name
         @include text-16()
         font-weight: 700
         color: $white
+        line-height: 24px
 
       .footer__logo
         display: flex
@@ -345,8 +350,11 @@ footer
         gap: 5px
 
         @media screen and (max-width: 1152px)
-            align-items: flex-start
-            font-size: 18px
+          align-items: flex-start
+          font-size: 18px
+
+        @media screen and (max-width: 764px)
+          flex-direction: column
 
         width: 100%
         @include text-20()
@@ -356,6 +364,11 @@ footer
     .footer__social
       display: flex
       gap: 32px
+
+      @media screen and (max-width: 764px)
+        flex-direction: column
+        width: 100%
+        gap: 20px
 
       span
         font-weight: bold
@@ -374,7 +387,10 @@ footer
         color: $white
 
         @media screen and (max-width: 1152px)
-            font-size: 14px
+          font-size: 14px
+
+        @media screen and (max-width: 764px)
+          font-size: 16px
 
 
 .call
@@ -382,7 +398,6 @@ footer
   flex-direction: column
   align-items: center
   justify-content: center
-  padding: 40px
 
   position: fixed
   width: 100%
@@ -391,6 +406,8 @@ footer
 
   transition: .2s ease-out
 
+  z-index: 9999
+
   &.active
     display: flex
 
@@ -398,6 +415,12 @@ footer
     max-width: 700px
     background: $white
     padding: 40px
+
+    @media screen and (max-width: 764px)
+      padding: 60px 15px
+
+      .call__form.disabled > &
+        padding: 15px
 
     position: relative
 
@@ -414,6 +437,9 @@ footer
       line-height: 140%
       color: $main-text
 
+      @media screen and (max-width: 764px)
+        font-size: 16px
+
     .call__form
       width: 100%
 
@@ -422,6 +448,9 @@ footer
       gap: 32px
 
       position: relative
+
+      @media screen and (max-width: 764px)
+        gap: 12px
 
       &.disabled
         display: none
@@ -435,6 +464,12 @@ footer
           width: 100%
           max-width: 300px
           position: relative
+
+          @media screen and (max-width: 764px)
+            max-width: unset
+
+            input
+              max-width: 301px
 
           img
             opacity: 0
@@ -477,6 +512,12 @@ footer
         display: flex
         gap: 20px
 
+        @media screen and (max-width: 764px)
+          flex-direction: column
+
+          .main-button
+            max-width: unset!important
+
         .main-button
           width: 100%
           justify-content: center
@@ -488,6 +529,9 @@ footer
           font-weight: 400
           line-height: 24px
           color: $main-text
+
+          @media screen and (max-width: 764px)
+            font-size: 12px
 
         a
           text-decoration: underline
@@ -506,6 +550,9 @@ footer
         div
           display: flex
           gap: 16px
+
+          @media screen and (max-width: 764px)
+            gap: 4px
 
           .black-button
             width: 100%
@@ -575,8 +622,11 @@ footer
     padding: 60px 94px
 
     @media screen and (max-width: 1152px)
-      &
-        padding:  60px 12px
+      padding: 60px 12px
+
+    @media screen and (max-width: 764px)
+      padding: 94px 15px 60px
+      flex-direction: column-reverse
 
     .under-key__left
       display: flex
@@ -585,14 +635,20 @@ footer
       max-width: 692px
 
       @media screen and (max-width: 1366px)
-        &
-          max-width: 580px
+        max-width: 580px
 
         h2
           font-size: 36px!important
 
         p
           font-size: 18px!important
+
+      @media screen and (max-width: 764px)
+        h2
+          font-size: 30px!important
+
+        p
+          font-size: 16px!important
 
       h2
         line-height: 120%
@@ -617,12 +673,19 @@ footer
       position: relative
       min-width: 400px
 
+      @media screen and (max-width: 764px)
+        min-width: unset
+
       .right__img
         width: 100%
         height: 100%
         max-width: 692px
         max-height: 372px
         position: relative
+
+        @media screen and (max-width: 764px)
+          max-width: unset
+          max-height: unset
 
         &:before
           @include linear-bg(90deg)
@@ -636,6 +699,10 @@ footer
         position: absolute
         max-width: 437px
         bottom: -60px
+
+        @media screen and (max-width: 764px)
+          max-width: 60%
+          bottom: 0
 
 
 .contacts
@@ -654,43 +721,59 @@ footer
     padding: 120px 94px
 
     @media screen and (max-width: 1152px)
-      &
-        padding:  60px 12px
-        .contacts-cards
-          padding: 15px!important
-          .contacts-card
-            gap: 10px!important
-            .card__content
-              p
-                font-size: 12px!important
-                line-height: 14px!important
+      padding: 60px 12px
+
+      .contacts-cards
+        padding: 15px
+        .contacts-card
+          gap: 10px!important
+          .card__content
+            p
+              font-size: 12px!important
+              line-height: 14px!important
 
 
         .contacts__left
           max-width: 450px!important
 
           .contacts__info
-
             h2
               font-size: 36px!important
 
             p
               font-size: 18px!important
 
+    @media screen and (max-width: 764px)
+      padding: 60px 15px
+      flex-direction: column
 
     .contacts-cards
       display: flex
       gap: 40px
+
+      @media screen and (max-width: 764px)
+        flex-direction: column
+        padding: 0
+        gap: 12px
 
       .contacts-card
         display: flex
         gap: 16px
         align-items: center
 
+        &:nth-child(3), &:nth-child(4)
+          display: none
+
+          @media screen and (max-width: 764px)
+            display: flex
+
         .card__img-box
           padding: 13px
           background: $main-black
           display: flex
+
+          @media screen and (max-width: 764px)
+            padding: 8px
 
         .card__content
           display: flex
@@ -711,10 +794,20 @@ footer
       gap: 48px
       max-width: 571px
 
+      @media screen and (max-width: 764px)
+        gap: 20px
+
       .contacts__info
         display: flex
         flex-direction: column
         gap: 20px
+
+        @media screen and (max-width: 764px)
+          gap: 12px
+
+          .main-button
+            width: 100%
+            justify-content: center
 
         h2
           line-height: 120%
@@ -725,11 +818,25 @@ footer
           line-height: 160%
           color: $main-text
 
+          @media screen and (max-width: 764px)
+            font-size: 16px
+
     .contacts__right
       display: flex
       justify-content: center
       align-items: center
       width: 100%
+
+      @media screen and (max-width: 764px)
+        .map
+          max-width: unset!important
+          min-width: unset!important
+
+          &:before
+            display: none
+
+          .contacts-cards
+            display: none
 
       .map
         display: flex

@@ -36,6 +36,7 @@ $(function () {
                     if (currentStep < $cases.length - 1) {
                         currentStep++;
                         updateCases(currentStep);
+                        find_height(currentStep);
                     }
                 });
             }
@@ -45,14 +46,45 @@ $(function () {
                     if (currentStep > 0) {
                         currentStep--;
                         updateCases(currentStep);
+                        find_height(currentStep);
                     }
                 });
             }
         });
     }
 
+    function find_height(step) {
+        let case_height;
+
+        // Берём конкретный активный кейс по индексу
+        const $activeCase = $cases.eq(step);
+
+        let img_height = $activeCase.find(".case__img").height();
+        let text_height = 0;
+
+        // Высота текста только для активного кейса
+        $activeCase.find('.case__info').each(function () {
+            let currentHeight = $(this).height();
+            if (currentHeight > text_height) {
+                text_height = currentHeight;
+            }
+        });
+
+        if ($(window).width() > 764) {
+            case_height = text_height + 50;
+        } else {
+            case_height = img_height + text_height + 28;
+        }
+
+        $(".work-stages__cases").height(case_height);
+    }
+
+    find_height(currentStep);
     updateCases(currentStep);
     attachButtonListeners();
+    $(window).on("resize", function () {
+        find_height(currentStep);
+    });
 
     // FAQ
 
@@ -60,37 +92,5 @@ $(function () {
         $(this).closest('.faq__question').toggleClass('active');
     });
 
-    // Work stages
-
-    function find_height() {
-
-        let case_height
-
-        let img_height = $(".case__img").height();
-
-        let text_height = 0
-
-        $('.case__info').each(function() {
-            let currentHeight = $(this).height();
-            if (currentHeight > text_height) {
-                text_height = currentHeight;
-            }
-        });
-
-        if($(window).width() > 764)
-        {
-            case_height = text_height + 50
-        }
-        else
-            case_height = img_height + text_height + 28;
-
-        $(".work-stages__cases").height(case_height);
-    }
-
-    find_height();
-
-    $(window).on("resize", function () {
-        find_height();
-    })
 
 });

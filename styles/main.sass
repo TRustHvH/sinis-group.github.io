@@ -550,7 +550,7 @@
         gap: 28px
 
         opacity: 1
-        transition: .4s linear
+        transition: .2s linear
 
         position: absolute
         width: 100%
@@ -663,13 +663,26 @@
     padding: 120px 94px
 
     @media screen and (max-width: 1152px)
-      &
-        padding:  60px 12px
+      padding: 60px 12px
+
+    @media screen and (max-width: 764px)
+      padding: 60px 15px
+      gap: 32px
 
     .faq__title
       display: flex
       flex-direction: column
       gap: 14px
+
+      @media screen and (max-width: 764px)
+        gap: 12px
+
+        h2
+          text-align: center
+
+        p
+          font-size: 20px!important
+          text-align: center
 
       h2
         line-height: 120%
@@ -685,11 +698,19 @@
       gap: 28px
       width: 100%
 
+      @media screen and (max-width: 764px)
+        flex-direction: column
+        gap: 8px
+
+        .faq__questions
+          gap: 8px!important
+
       .faq__questions
         display: flex
         flex-direction: column
         gap: 20px
         width: 100%
+
 
         .faq__question
           display: flex
@@ -697,6 +718,9 @@
           padding: 28px
           background: index.$white
           width: 100%
+
+          @media screen and (max-width: 764px)
+            padding: 20px 16px
 
           &.active .plus
             rotate: 45deg
@@ -716,6 +740,9 @@
               color: index.$main-text
               line-height: 160%
 
+              @media screen and (max-width: 764px)
+                font-size: 14px
+
             .plus
               overflow: unset
               color: #9DA2A7
@@ -733,6 +760,18 @@
             gap: 8px
             overflow: hidden
             transition: .3s linear
+
+            @media screen and (max-width: 764px)
+              gap: 6px
+
+              h4
+                padding-top: 14px!important
+                font-size: 16px!important
+                line-height: 140% !important
+
+              p, li
+                font-size: 14px!important
+                line-height: 140% !important
 
             h4
               padding-top: 19px

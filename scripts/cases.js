@@ -1,26 +1,62 @@
 $(function () {
-    const $chooses = $('.choose');
+    const $choosesDesktopContainer = $('.our-cases__choose');
+    const $choosesMobileContainer = $('.our-cases__choose-mobile');
+    const $choosesMobileHtml = $('.our-cases__choose-mobile div');
     const $cases = $('.our-cases__case');
 
-    // Переключение кейсов
-    $chooses.each(function (index) {
-        $(this).on('click', function () {
-            $chooses.removeClass('active');
-            $(this).addClass('active');
+    function syncChooseElements() {
+        const $choosesDesktop = $choosesDesktopContainer.find('.choose');
+        const $choosesMobile = $choosesMobileContainer.find('.choose');
 
-            $cases.removeClass('active');
-            $cases.eq(index).addClass('active');
+        function activateCase(index) {
+            $choosesDesktop.removeClass('active').eq(index).addClass('active');
+            $choosesMobile.removeClass('active').eq(index).addClass('active');
 
-            initCarousel($cases.eq(index));
+            $cases.removeClass('active').eq(index).addClass('active');
+            const $activeCase = $cases.eq(index);
+
+            initCarousel($activeCase);
+
+            // Вызов пересчета высоты для активного кейса
+            findHeight($activeCase);
+        }
+
+        $choosesDesktop.each(function (index) {
+            $(this).off('click').on('click', function () {
+                activateCase(index);
+            });
         });
+
+        $choosesMobile.each(function (index) {
+            $(this).off('click').on('click', function () {
+                activateCase(index);
+            });
+        });
+    }
+
+    // Перенос HTML из mobile в desktop при ширине < 764px
+    function moveMobileToDesktop() {
+        if (window.outerWidth < 764) {
+            // Переносим HTML
+            $choosesDesktopContainer.html($choosesMobileHtml.html());
+        }
+    }
+
+    // Вызов при загрузке
+    moveMobileToDesktop();
+    syncChooseElements();
+
+    // При ресайзе (если нужно динамически)
+    $(window).on('resize', function () {
+        moveMobileToDesktop();
+        syncChooseElements();
     });
 
-    // Инициализация карусели внутри конкретного кейса
+    // Инициализация карусели
     function initCarousel($caseBlock) {
         const $thumbnails = $caseBlock.find('.case__carousel .thumbnail img');
         const $mainImage = $caseBlock.find('.case__carousel .mainImage');
 
-        // Клик по миниатюре в карусели
         $thumbnails.off('click').on('click', function () {
             const fullSrc = $(this).data('full');
             $mainImage.attr('src', fullSrc);
@@ -29,7 +65,6 @@ $(function () {
             $(this).parent().addClass('active');
         });
 
-        // Кнопка zoom — открывает full-image-show внутри этого кейса
         const $zoomButton = $caseBlock.find('.case__carousel .click-zoom');
         $zoomButton.off('click').on('click', function () {
             const mainImageSrc = $mainImage.attr('src');
@@ -46,7 +81,6 @@ $(function () {
             $mainImage.attr('src', fullSrc);
         }
 
-        // Клик по миниатюрам внутри full-image-show
         const $fullThumbnails = $caseBlock.find('.full-image-show .thumbnail img');
         const $fullMainImage = $caseBlock.find('.full-image-show .mainImage');
 
@@ -58,15 +92,36 @@ $(function () {
             $(this).parent().addClass('active');
         });
 
-        // Закрытие zoom только для текущего кейса
         $caseBlock.find('.full-image-show .close-zoom').off('click').on('click', function () {
             $caseBlock.find('.full-image-show').removeClass('active');
         });
     }
 
-    // Инициализируем активный кейс при загрузке
     const $activeCase = $('.our-cases__case.active').first();
     if ($activeCase.length) {
         initCarousel($activeCase);
+        findHeight($activeCase);
     }
+
+    function findHeight($activeCase) {
+        let caseHeight;
+        let imgHeight = $activeCase.find(".case__left").height();
+        let chooseHeight = $(".our-cases__choose").height();
+        let chooseMobileHeight = $(".our-cases__choose-mobile").height();
+
+        // Берем только текст активного кейса
+        let textHeight = $activeCase.find('.case__right').height();
+
+        if($(window).width() > 764) {
+            caseHeight = textHeight + 32 + chooseHeight;
+        } else {
+            caseHeight = imgHeight + textHeight + 112 + chooseMobileHeight + chooseHeight;
+        }
+
+        $(".our-cases__cases").height(caseHeight);
+    }
+
+    $(window).on('resize', function () {
+        findHeight($activeCase);
+    })
 });
