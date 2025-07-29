@@ -260,6 +260,10 @@
               position: relative
               overflow: hidden
 
+              @media screen and (max-width: 764px)
+                width: 90%
+                height: 20%
+
 
               & > img
                 width: 100%
@@ -292,6 +296,9 @@
               .thumbnails
                 display: flex
                 gap: 16px
+
+                @media screen and (max-width: 764px)
+                  gap: 8px
 
                 .thumbnail
                   width: 78px
@@ -328,6 +335,10 @@
                 height: 60px
                 z-index: 3
                 right: -600px
+
+                @media screen and (max-width: 764px)
+                  right: -175px
+                  top: -50px
 
           .main-button
             width: 100%

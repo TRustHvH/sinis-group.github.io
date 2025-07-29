@@ -18,6 +18,14 @@
 
     padding: 40px 94px 80px
 
+    @media screen and (max-width: 1152px)
+      padding: 60px 12px
+
+    @media screen and (max-width: 764px)
+      padding: 40px 15px
+      gap: 32px
+
+
     h2
       @include index.main-title
 
@@ -37,6 +45,9 @@
 
           max-width: 812px
 
+          @media screen and (max-width: 764px)
+            gap: 12px
+
           h3
             font-size: 28px
             font-family: "AA Stetica", sans-serif
@@ -44,10 +55,16 @@
             line-height: 140%
             color: index.$main-black
 
+            @media screen and (max-width: 764px)
+              font-size: 20px
+
           p, li
             @include index.text-20
             line-height: 160%
             color: index.$main-black
+
+            @media screen and (max-width: 764px)
+              font-size: 14px
 
           ul
             display: flex
@@ -67,10 +84,20 @@
 
       .service__content-text-first
 
+        @media screen and (max-width: 764px)
+          flex-direction: column-reverse
+
         .image
           width: 572px
           height: 310px
           position: relative
+
+          @media screen and (max-width: 764px)
+            width: 100%
+            height: 100%
+
+            &:before
+              height: 98%!important
 
           &:before
             @include index.linear-bg(90deg)
@@ -81,6 +108,10 @@
             height: 100%
 
       .service__content-text-second
+
+        @media screen and (max-width: 764px)
+          flex-direction: column
+          gap: 60px
 
         .more-services
           display: flex
@@ -94,6 +125,9 @@
           max-width: 572px
           width: 100%
 
+          @media screen and (max-width: 764px)
+            gap: 12px
+
           div
             display: flex
             flex-direction: column
@@ -104,6 +138,11 @@
             line-height: 140%
             color: index.$main-black
 
+            @media screen and (max-width: 764px)
+              font-size: 22px!important
+              font-weight: 400!important
+
+
           a
             color: index.$main-color
             @include index.text-16
@@ -112,6 +151,9 @@
             display: flex
             gap: 8px
             align-items: center
+
+            @media screen and (max-width: 764px)
+              font-size: 14px!important
 
 
 

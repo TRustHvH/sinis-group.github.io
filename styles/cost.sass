@@ -18,17 +18,30 @@
     width: 100%
     gap: 60px
 
+    @media screen and (max-width: 1152px)
+      padding: 60px 12px 52px
+
+    @media screen and (max-width: 764px)
+      padding: 40px 15px 60px
+      gap: 32px
+
     h2
       color: index.$main-text
       max-width: 603px
       text-align: center
       @include index.main-title
 
+      @media screen and (max-width: 764px)
+        font-size: 30px
+        line-height: 120%
 
     .cost-on-site__content
       display: flex
       flex-direction: column
       gap: 40px
+
+      @media screen and (max-width: 764px)
+        gap: 32px
 
       & > p
         color: index.$main-text
@@ -36,6 +49,9 @@
         max-width: 930px
         @include index.text-20
         font-weight: 700
+
+        @media screen and (max-width: 764px)
+          font-size: 16px
 
         span.thin
           font-weight: normal
@@ -48,6 +64,10 @@
         grid-template-columns: repeat(2, 1fr)
         gap: 28px
 
+        @media screen and (max-width: 764px)
+          grid-template-columns: repeat(1, 1fr)
+          gap: 16px
+
         .cost-on-site__item
           display: flex
           flex-direction: column
@@ -57,6 +77,10 @@
           position: relative
           box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
 
+          @media screen and (max-width: 764px)
+            padding: 16px
+
+
           h3
             font-size: 28px
             line-height: 140%
@@ -64,10 +88,16 @@
             font-weight: 700
             color: index.$main-text
 
+            @media screen and (max-width: 764px)
+              font-size: 20px
+
           p
             @include index.text-16
             line-height: 24px
             color: index.$main-text
+
+            @media screen and (max-width: 764px)
+              font-size: 14px
 
           span
             position: absolute
@@ -78,6 +108,11 @@
             font-weight: 700
             line-height: 120%
             color: index.$main-color
+
+            @media screen and (max-width: 764px)
+              font-size: 36px
+              top: -21px
+              right: 28px
 
 
 .calculation
@@ -96,11 +131,30 @@
     width: 100%
     gap: 60px
 
+    @media screen and (max-width: 1152px)
+      padding: 60px 12px
+
+    @media screen and (max-width: 764px)
+      padding: 0
+      gap: 32px
+
     .calculation__title
       display: flex
       flex-direction: column
       align-items: center
       gap: 20px
+
+      @media screen and (max-width: 764px)
+        gap: 12px
+        padding: 0 15px
+
+        h2
+          font-size: 30px!important
+          text-align: center
+
+        p
+          font-size: 22px!important
+          text-align: center
 
       h2
         @include index.sub-title
@@ -123,14 +177,26 @@
         display: flex
         gap: 28px
 
+        @media screen and (max-width: 764px)
+          flex-direction: column
+          gap: 32px
+          padding: 0 15px
+
         .calculation__about-item
           display: flex
           flex-direction: column
           gap: 16px
 
+          @media screen and (max-width: 764px)
+            gap: 12px
+
           .item-img
             width: 572px
             height: 170px
+
+            @media screen and (max-width: 1152px)
+              width: 100%
+              height: 100%
 
             img
               width: 100%
@@ -141,6 +207,22 @@
             display: flex
             flex-direction: column
             gap: 16px
+
+            @media screen and (max-width: 764px)
+              gap: 12px
+
+              h3
+                font-size: 20px!important
+
+              ul
+                gap: 12px!important
+
+                li
+                  font-size: 16px!important
+
+                  &:before
+                    top: 1px!important
+
 
             h3
               font-size: 28px
@@ -156,7 +238,7 @@
               flex-direction: column
               gap: 16px
 
-              & li
+              li
                 @include index.text-20
                 line-height: 160%
                 color: index.$main-text
@@ -183,6 +265,24 @@
         padding: 40px
         position: relative
 
+        @media screen and (max-width: 1366px)
+          padding: 40px 40px 40px 27.5%
+
+        @media screen and (max-width: 764px)
+          flex-direction: column
+          padding: 174px 15px 32px
+          gap: 12px
+
+          .black-button
+            width: 100%!important
+            justify-content: center!important
+
+          p
+            font-size: 20px!important
+
+          img
+            left: calc(50% - 112px)!important
+
         img
           position: absolute
           left: 23px
@@ -195,6 +295,9 @@
           line-height: 140%
           color: index.$white
 
+          @media screen and (max-width: 1152px)
+            font-size: 20px
+            max-width: 550px
 
 .delivery
   background: index.$main-bg
@@ -212,16 +315,36 @@
     width: 100%
     gap: 60px
 
+    @media screen and (max-width: 1152px)
+      padding: 60px 12px 52px
+
+    @media screen and (max-width: 764px)
+      padding: 40px 15px 80px
+      gap: 60px
+
     .delivery-cost
       display: flex
       flex-direction: column
       gap: 40px
+
+      @media screen and (max-width: 764px)
+        gap: 32px
 
       .delivery-cost__title
         display: flex
         flex-direction: column
         align-items: center
         gap: 20px
+
+        @media screen and (max-width: 764px)
+          gap: 12px
+
+          h2
+            font-size: 30px!important
+
+          p
+            font-size: 22px!important
+            text-align: center
 
         h2
           @include index.sub-title
@@ -243,6 +366,23 @@
         column-gap: 8px
         row-gap: 32px
 
+        @media screen and (max-width: 1152px)
+          justify-content: center
+
+        @media screen and (max-width: 764px)
+          justify-content: center
+          gap: 12px
+
+          .delivery-cost__block
+            padding: 16px!important
+            gap: 12px
+            justify-content: unset!important
+
+          svg
+            position: static!important
+            min-width: 29px
+
+
         .delivery-cost__block
           display: flex
           align-items: center
@@ -262,6 +402,9 @@
             max-width: 692px
             width: 100%
 
+          @media screen and (max-width: 1366px)
+            max-width: 100%!important
+
           svg
             position: absolute
             top: -16px
@@ -280,6 +423,13 @@
       align-items: center
       gap: 40px
 
+      @media screen and (max-width: 764px)
+        gap: 32px
+
+        h2
+          text-align: center
+          font-size: 30px!important
+
       h2
         @include index.sub-title
         line-height: 140%
@@ -288,6 +438,9 @@
         display: flex
         flex-wrap: wrap
         gap: 28px
+
+        @media screen and (max-width: 764px)
+          gap: 16px
 
         .delivery-type__block
           display: flex
@@ -298,6 +451,12 @@
           padding: 28px 24px
           background: index.$white
           box-shadow: 0 4px 10px 0 rgba(26, 40, 54, 0.05)
+
+          @media screen and (max-width: 764px)
+            padding: 16px
+
+            img
+              max-width: 66px
 
           .block-info
             display: flex
@@ -310,7 +469,10 @@
               font-family: "AA Stetica", sans-serif
               font-weight: 700
               line-height: 140%
-              color: index.$main-black
+              color: index.$main-text
+
+              @media screen and (max-width: 764px)
+                font-size: 20px
 
             div
               display: flex
@@ -323,6 +485,8 @@
                 color: rgb(124, 130, 137)
                 font-weight: 700
 
+                @media screen and (max-width: 764px)
+                  font-size: 14px
+
                 & span
                   font-weight: 400
-
