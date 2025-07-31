@@ -16,11 +16,11 @@
                 <img src="assets/svg/logo.svg" alt="logo">
             </a>
             <div class="header__link-menu">
-                <a href="">О нас</a>
-                <a href="">Услуги</a>
-                <a href="">Кейсы</a>
-                <a href="">Цены</a>
-                <a href="">Контакты</a>
+                <a href="about-us.html">О нас</a>
+                <a href="services.html">Услуги</a>
+                <a href="cases.html">Кейсы</a>
+                <a href="cost.html">Цены</a>
+                <a href="contacts.html">Контакты</a>
             </div>
             <div class="header__call-me">
                 <a href="tel:+375293666236" class="header__call-me-phone-number">
@@ -39,11 +39,11 @@
             <div class="header__mobile">
                 <div class="header__mobile-menu">
                     <div class="header__mobile-links">
-                        <a href="#">О нас</a>
-                        <a href="#">Услуги</a>
-                        <a href="#">Кейсы</a>
-                        <a href="#">Цены</a>
-                        <a href="#">Контакты</a>
+                        <a href="about-us.html">О нас</a>
+                        <a href="services.html">Услуги</a>
+                        <a href="cases.html">Кейсы</a>
+                        <a href="cost.html">Цены</a>
+                        <a href="contacts.html">Контакты</a>
                     </div>
                     <div class="header__mobile-call-me">
                         <span></span>
@@ -252,7 +252,7 @@
                     <h2>Получите расчет полной стоимости <span>под ключ</span>!</h2>
                     <p>Хотите узнать полную стоимость доставки и всех услуг под ключ? Мы подготовим точный расчет, включая все этапы — от поиска поставщика до доставки и сертификации, с учетом всех расходов и особенностей вашего заказа.</p>
                     <p class="strong">Оставьте заявку, и наша команда свяжется с вами для расчета и обсуждения всех деталей!</p>
-                    <button class="main-button">
+                    <button class="main-button open-form">
                         Оставить заявку
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <use href="#arrow-right-top"></use>
@@ -273,7 +273,7 @@
                     <div class="contacts__info">
                         <h2>Как Вы можете с нами связаться:</h2>
                         <p>Мы на связи в рабочее время по всем нижеперечисленным контактам, а также Вы можете заказать обратный звонок и наш специалист свяжется с Вами!</p>
-                        <button class="main-button">
+                        <button class="main-button open-form">
                             Заказать звонок
                             <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <use href="#arrow-right-top"></use>
@@ -297,6 +297,24 @@
                             <div class="card__content">
                                 <p>Телефон:</p>
                                 <p class="strong">+375 (29) 366-62-36</p>
+                            </div>
+                        </div>
+                        <div class="contacts-card">
+                            <div class="card__img-box">
+                                <img src="assets/svg/map.svg" alt="map">
+                            </div>
+                            <div class="card__content">
+                                <p>Адрес:</p>
+                                <p class="strong">г.Минск, ул. Притыцкого д.2к3y</p>
+                            </div>
+                        </div>
+                        <div class="contacts-card">
+                            <div class="card__img-box">
+                                <img src="assets/svg/time.svg" alt="time">
+                            </div>
+                            <div class="card__content">
+                                <p>Время работы:</p>
+                                <p class="strong">пн-пт: 9:00 - 18:00 | сб-вс: выходной</p>
                             </div>
                         </div>
                     </div>
@@ -333,7 +351,7 @@
         <div class="footer__container">
             <div class="footer__company-info">
                 <div class="footer__logo">
-                    <img src="assets/svg/logo.svg" alt="logo">
+                    <a href="index.html"><img src="assets/svg/logo.svg" alt="logo"></a>
                     <p>— Прямые поставки из Китая «под ключ» с гарантией 100%</p>
                 </div>
                 <p class="footer__name">Общество с ограниченной ответственностью «Синис Групп»</p>
@@ -441,58 +459,57 @@
             <symbol id="right" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 4L10 8L6 12" stroke="#7C8289" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
-
         </svg>
     </footer>
-<form class="call">
-    <div class="call__container">
-        <svg class="call__close" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <use href="#close"></use>
-        </svg>
-        <div class="call__form">
-            <h2>Оставьте заявку, и наша команда свяжется с вами для расчета и обсуждения всех деталей!</h2>
-            <div class="call__inputs">
-                <label>
-                    <input placeholder="Ваше имя" type="text" required/>
-                    <img src="assets/svg/fe_check.svg" alt="">
-                </label>
-                <label>
-                    <input placeholder="Ваш телефон" type="text" class="phone" required/>
-                    <img src="assets/svg/fe_check.svg" alt="">
-                </label>
-                <label>
-                    <input placeholder="Вид товара" type="text" required/>
-                    <img src="assets/svg/fe_check.svg" alt="">
-                </label>
-                <label>
-                    <input placeholder="Количество" type="text" required/>
-                    <img src="assets/svg/fe_check.svg" alt="">
-                </label>
-            </div>
-            <div class="call__button">
-                <button type="submit" class="main-button" id="call__submit">Отправить</button>
-                <p>Нажимая кнопку «Отправить»<br/> Вы даёте согласие <span><a href="#">на обработку персональных данных</a></span></p>
-            </div>
-            <div class="call__contacts">
-                <h3>Или свяжитесь с нами через мессенджеры:</h3>
-                <div>
-                    <a href="#" class="black-button">
-                        Telegram
-                        <img src="assets/svg/telegram.svg" alt="">
-                    </a>
-                    <a href="#" class="black-button">
-                        WhatsApp
-                        <img src="assets/svg/whatsapp.svg" alt="">
-                    </a>
+    <form class="call">
+        <div class="call__container">
+            <svg class="call__close" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <use href="#close"></use>
+            </svg>
+            <div class="call__form">
+                <h2>Оставьте заявку, и наша команда свяжется с вами для расчета и обсуждения всех деталей!</h2>
+                <div class="call__inputs">
+                    <label>
+                        <input placeholder="Ваше имя" type="text" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                    <label>
+                        <input placeholder="Ваш телефон" type="text" class="phone" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                    <label>
+                        <input placeholder="Вид товара" type="text" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                    <label>
+                        <input placeholder="Количество" type="text" required/>
+                        <img src="assets/svg/fe_check.svg" alt="">
+                    </label>
+                </div>
+                <div class="call__button">
+                    <button type="submit" class="main-button" id="call__submit">Отправить</button>
+                    <p>Нажимая кнопку «Отправить»<br/> Вы даёте согласие <span><a href="#">на обработку персональных данных</a></span></p>
+                </div>
+                <div class="call__contacts">
+                    <h3>Или свяжитесь с нами через мессенджеры:</h3>
+                    <div>
+                        <a href="#" class="black-button">
+                            Telegram
+                            <img src="assets/svg/telegram.svg" alt="">
+                        </a>
+                        <a href="#" class="black-button">
+                            WhatsApp
+                            <img src="assets/svg/whatsapp.svg" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
+            <div class="call__success disabled">
+                <h2>Спасибо!<br/> Данные успешно отправлены.</h2>
+                <p>Скоро наш сотрудник с Вами свяжется, ожидайте, пожалуйста!</p>
+            </div>
         </div>
-        <div class="call__success disabled">
-            <h2>Спасибо!<br/> Данные успешно отправлены.</h2>
-            <p>Скоро наш сотрудник с Вами свяжется, ожидайте, пожалуйста!</p>
-        </div>
-    </div>
-</form>
-<script src="scripts/index.js"></script>
+    </form>
+    <script src="scripts/index.js"></script>
 </body>
 </html>

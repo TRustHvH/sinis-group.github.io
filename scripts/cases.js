@@ -34,9 +34,9 @@ $(function () {
         });
     }
 
-    // Перенос HTML из mobile в desktop при ширине < 764px
+    // Перенос HTML из mobile в desktop при ширине < 960px
     function moveMobileToDesktop() {
-        if (window.outerWidth < 764) {
+        if (window.innerWidth < 961) {
             // Переносим HTML
             $choosesDesktopContainer.html($choosesMobileHtml.html());
         }
@@ -112,7 +112,7 @@ $(function () {
         // Берем только текст активного кейса
         let textHeight = $activeCase.find('.case__right').height();
 
-        if($(window).width() > 764) {
+        if($(window).width() > 960) {
             caseHeight = textHeight + 32 + chooseHeight;
         } else {
             caseHeight = imgHeight + textHeight + 112 + chooseMobileHeight + chooseHeight;

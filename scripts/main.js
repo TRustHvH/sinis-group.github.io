@@ -70,7 +70,7 @@ $(function () {
             }
         });
 
-        if ($(window).width() > 764) {
+        if ($(window).width() > 960) {
             case_height = text_height + 50;
         } else {
             case_height = img_height + text_height + 28;
@@ -88,7 +88,7 @@ $(function () {
 
     // FAQ
 
-    $('.faq__question .plus').on('click', function () {
+    $('.faq__question').on('click', function () {
         $(this).closest('.faq__question').toggleClass('active');
     });
 

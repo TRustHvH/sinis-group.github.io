@@ -34,7 +34,7 @@ $font-path: "../assets/fonts"
   font-size: 44px
   font-weight: 700
 
-  @media screen and (max-width: 764px)
+  @media screen and (max-width: 960px)
     font-size: 30px
 
 @mixin sub-title()
@@ -84,7 +84,7 @@ $white: #FFFFFF
 
   user-select: none
 
-  @media screen and (max-width: 764px)
+  @media screen and (max-width: 960px)
     font-size: 14px
 
   &.round
@@ -166,7 +166,7 @@ header
       padding: 24px 12px
 
 
-    @media screen and (max-width: 764px)
+    @media screen and (max-width: 960px)
       padding: 20px 15px
 
       .header__link-menu, .header__call-me
@@ -197,13 +197,13 @@ header
         background: $white
         transition: transform .1s linear
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         display: flex
 
     .header__bars, .header__mobile
       display: none
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         display: flex
 
     .header__link-menu
@@ -326,7 +326,7 @@ footer
       .footer__social
         gap: 8px!important
 
-    @media screen and (max-width: 764px)
+    @media screen and (max-width: 960px)
       flex-direction: column
       gap: 20px
 
@@ -336,8 +336,9 @@ footer
       flex-direction: column
       gap: 4px
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         gap: 20px
+        width: 100%
 
       .footer__name
         @include text-16()
@@ -349,24 +350,29 @@ footer
         display: flex
         align-items: flex-end
         gap: 5px
-
-        @media screen and (max-width: 1152px)
-          align-items: flex-start
-          font-size: 18px
-
-        @media screen and (max-width: 764px)
-          flex-direction: column
-
         width: 100%
-        @include text-20()
         line-height: 160%
         color: $white
+
+        @include text-20()
+
+        @media screen and (max-width: 1550px)
+          align-items: flex-start
+
+        @media screen and (max-width: 1152px)
+          font-size: 18px
+
+        @media screen and (max-width: 960px)
+          flex-direction: column
+
+        a
+          display: flex
 
     .footer__social
       display: flex
       gap: 32px
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         flex-direction: column
         width: 100%
         gap: 20px
@@ -390,7 +396,7 @@ footer
         @media screen and (max-width: 1152px)
           font-size: 14px
 
-        @media screen and (max-width: 764px)
+        @media screen and (max-width: 960px)
           font-size: 16px
 
 
@@ -417,13 +423,13 @@ footer
     background: $white
     padding: 40px
 
-    @media screen and (max-width: 764px)
+    position: relative
+
+    @media screen and (max-width: 960px)
       padding: 60px 16px
 
       &:has(.call__form.disabled)
         padding: 16px
-
-    position: relative
 
     .call__close
       position: absolute
@@ -438,7 +444,7 @@ footer
       line-height: 140%
       color: $main-text
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         font-size: 16px
 
     .call__form
@@ -450,7 +456,7 @@ footer
 
       position: relative
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         gap: 12px
 
       &.disabled
@@ -466,11 +472,8 @@ footer
           max-width: 300px
           position: relative
 
-          @media screen and (max-width: 764px)
+          @media screen and (max-width: 960px)
             max-width: unset
-
-            input
-              max-width: 300px
 
           img
             opacity: 0
@@ -487,7 +490,7 @@ footer
           border: 2px solid rgb(231, 234, 237)
           background: rgb(244, 245, 246)
           padding: 20px
-          max-width: 258px
+          max-width: calc(100% - 44px)
           width: 100%
 
           cursor: text
@@ -513,7 +516,7 @@ footer
         display: flex
         gap: 20px
 
-        @media screen and (max-width: 764px)
+        @media screen and (max-width: 960px)
           flex-direction: column
 
           .main-button
@@ -531,7 +534,7 @@ footer
           line-height: 24px
           color: $main-text
 
-          @media screen and (max-width: 764px)
+          @media screen and (max-width: 960px)
             font-size: 12px
 
         a
@@ -552,7 +555,7 @@ footer
           display: flex
           gap: 16px
 
-          @media screen and (max-width: 764px)
+          @media screen and (max-width: 960px)
             gap: 4px
 
           .black-button
@@ -567,7 +570,7 @@ footer
       position: relative
       pointer-events: none
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         gap: 8px
 
       &.disabled
@@ -581,7 +584,7 @@ footer
         line-height: 160%
         color: $main-text
 
-        @media screen and (max-width: 764px)
+        @media screen and (max-width: 960px)
           font-size: 16px!important
 
 
@@ -604,7 +607,7 @@ footer
 
     padding: 20px 92px
 
-    @media screen and (max-width: 764px)
+    @media screen and (max-width: 960px)
       padding: 12px 15px
 
     a
@@ -638,7 +641,7 @@ footer
     @media screen and (max-width: 1152px)
       padding: 60px 12px
 
-    @media screen and (max-width: 764px)
+    @media screen and (max-width: 960px)
       padding: 94px 15px 60px
       flex-direction: column-reverse
 
@@ -657,7 +660,7 @@ footer
         p
           font-size: 18px!important
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         h2
           font-size: 30px!important
 
@@ -687,7 +690,7 @@ footer
       position: relative
       min-width: 400px
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         min-width: unset
 
       .right__img
@@ -697,7 +700,7 @@ footer
         max-height: 372px
         position: relative
 
-        @media screen and (max-width: 764px)
+        @media screen and (max-width: 960px)
           max-width: unset
           height: 185px
 
@@ -712,9 +715,10 @@ footer
       .manager
         position: absolute
         max-width: 437px
+        width: 100%
         bottom: -60px
 
-        @media screen and (max-width: 764px)
+        @media screen and (max-width: 960px)
           max-width: 188px
           bottom: 0
 
@@ -757,7 +761,7 @@ footer
             p
               font-size: 18px!important
 
-    @media screen and (max-width: 764px)
+    @media screen and (max-width: 960px)
       padding: 60px 15px
       flex-direction: column
 
@@ -765,7 +769,7 @@ footer
       display: flex
       gap: 40px
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         flex-direction: column
         padding: 0
         gap: 12px
@@ -778,7 +782,7 @@ footer
         &:nth-child(3), &:nth-child(4)
           display: none
 
-          @media screen and (max-width: 764px)
+          @media screen and (max-width: 960px)
             display: flex
 
         .card__img-box
@@ -786,7 +790,7 @@ footer
           background: $main-black
           display: flex
 
-          @media screen and (max-width: 764px)
+          @media screen and (max-width: 960px)
             padding: 8px
 
         .card__content
@@ -808,15 +812,16 @@ footer
       gap: 48px
       max-width: 571px
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         gap: 20px
+        max-width: unset!important
 
       .contacts__info
         display: flex
         flex-direction: column
         gap: 20px
 
-        @media screen and (max-width: 764px)
+        @media screen and (max-width: 960px)
           gap: 12px
 
           .main-button
@@ -832,7 +837,7 @@ footer
           line-height: 160%
           color: $main-text
 
-          @media screen and (max-width: 764px)
+          @media screen and (max-width: 960px)
             font-size: 16px
 
     .contacts__right
@@ -841,7 +846,7 @@ footer
       align-items: center
       width: 100%
 
-      @media screen and (max-width: 764px)
+      @media screen and (max-width: 960px)
         .map
           max-width: unset!important
           min-width: unset!important
