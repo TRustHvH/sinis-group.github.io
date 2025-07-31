@@ -1,4 +1,4 @@
 .idea/
-css/
+css/*.css.map
 styles/*.css
 styles/*.css.map
