@@ -1666,6 +1666,8 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 332px;
+  width: 100%;
   padding: 28px 24px;
   background: #FFFFFF;
   position: relative;
@@ -2045,8 +2047,9 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
     font-size: 14px !important;
     max-width: 270px;
     overflow: unset !important;
-    white-space: wrap;
+    white-space: wrap !important;
     line-height: 140% !important;
+    min-width: unset !important;
   }
   .guarantees__container .guarantees__items .guarantees__item svg {
     min-width: 48px;
@@ -2076,6 +2079,8 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   line-height: 24px;
   opacity: 0;
   overflow: hidden;
+  white-space: initial;
+  min-width: 309px;
 }
 .guarantees__container .guarantees__items .guarantees__item:hover {
   max-width: 426px;
