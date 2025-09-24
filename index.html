@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script src="lib/jquery.maskedinput.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 </head>
 <body>
     <header>
@@ -181,6 +182,9 @@
                         </div>
                     </div>
                     <div class="services__item">
+                        <div class="services__item-img">
+                            <img src="assets/img/services-second.png" alt="man-working">
+                        </div>
                         <div class="services__item-info">
                             <h3>Консолидация грузов</h3>
                             <p>Если вам нужны товары от разных поставщиков и производителей, то мы организуем временное хранение товара на нашем складе в Китае до сбора всего заказа на отправку одной партией. Это поможет вам сэкономить на доставке и экспортном-импортном оформлении.</p>
@@ -190,9 +194,6 @@
                                     <use href="#arrow-right-top"></use>
                                 </svg>
                             </a>
-                        </div>
-                        <div class="services__item-img">
-                            <img src="assets/img/services-second.png" alt="man-working">
                         </div>
                     </div>
                     <div class="services__item">
@@ -859,6 +860,94 @@
                 </div>
             </div>
         </div>
+        <div class="blog">
+            <div class="blog__container blog-main swiper">
+                <div class="blog__header">
+                    <div>
+                        <h2>Рассказываем секреты в нашем блоге</h2>
+                        <p class="subtitle">Экспертные советы для бизнеса и импорта</p>
+                    </div>
+                    <div class="blog__buttons">
+                        <a href="" class="main-button">Читать все статьи</a>
+                        <div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-wrapper blog__content">
+                    <a href="" class="pages__item swiper-slide">
+                        <div class="item_image">
+                            <img src="assets/img/blog.png" alt="">
+                        </div>
+                        <div class="item_info">
+                            <p class="date">15 августа 2025</p>
+                            <h2 class="title">Как выбрать надёжного поставщика в Китае: этапы и лайфхаки</h2>
+                            <p class="description">Разбираем, на что смотреть при поиске поставщиков, как избежать недобросовестных фабрик и почему проверенная база «Синис Групп» — преимущество для бизнеса.</p>
+                        </div>
+                        <button class="main-button">Читать статью</button>
+                    </a>
+                    <a href="" class="pages__item swiper-slide">
+                        <div class="item_image">
+                            <img src="assets/img/blog.png" alt="">
+                        </div>
+                        <div class="item_info">
+                            <p class="date">15 августа 2025</p>
+                            <h2 class="title">Как выбрать надёжного поставщика в Китае: этапы и лайфхаки</h2>
+                            <p class="description">Разбираем, на что смотреть при поиске поставщиков, как избежать недобросовестных фабрик и почему проверенная база «Синис Групп» — преимущество для бизнеса.</p>
+                        </div>
+                        <button class="main-button">Читать статью</button>
+                    </a>
+                    <a href="" class="pages__item swiper-slide">
+                        <div class="item_image">
+                            <img src="assets/img/blog.png" alt="">
+                        </div>
+                        <div class="item_info">
+                            <p class="date">15 августа 2025</p>
+                            <h2 class="title">Как выбрать надёжного поставщика в Китае: этапы и лайфхаки</h2>
+                            <p class="description">Разбираем, на что смотреть при поиске поставщиков, как избежать недобросовестных фабрик и почему проверенная база «Синис Групп» — преимущество для бизнеса.</p>
+                        </div>
+                        <button class="main-button">Читать статью</button>
+                    </a>
+                    <a href="" class="pages__item swiper-slide">
+                        <div class="item_image">
+                            <img src="assets/img/blog.png" alt="">
+                        </div>
+                        <div class="item_info">
+                            <p class="date">15 августа 2025</p>
+                            <h2 class="title">Как выбрать надёжного поставщика в Китае: этапы и лайфхаки</h2>
+                            <p class="description">Разбираем, на что смотреть при поиске поставщиков, как избежать недобросовестных фабрик и почему проверенная база «Синис Групп» — преимущество для бизнеса.</p>
+                        </div>
+                        <button class="main-button">Читать статью</button>
+                    </a>
+                </div>
+                <a href="" class="black-button">Читать все статьи</a>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var swiper = new Swiper(".blog-main", {
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        spaceBetween: 28,
+                        slidesPerView: 3,
+                        breakpoints: {
+                            250: {
+                                slidesPerView: 1.2,
+
+                            },
+                            481: {
+                                slidesPerView: 2.2,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                            }
+                        }
+                    });
+                })
+            </script>
+        </div>
         <div class="under-key">
             <div class="under-key__container">
                 <div class="under-key__left">
@@ -1233,6 +1322,10 @@
                     <a href="index.html"><img src="assets/svg/logo.svg" alt="logo"></a>
                     <p>— Прямые поставки из Китая «под ключ» с гарантией 100%</p>
                 </div>
+                <div class="footer__info">
+                    <p><span>Email: </span>info@chinatrade.by</p>
+                    <p><span>Телефон: </span>+375 (29) 366-62-36</p>
+                </div>
                 <p class="footer__name">Общество с ограниченной ответственностью «Синис Групп»</p>
             </div>
             <div class="footer__social">
@@ -1370,6 +1463,10 @@
                             WhatsApp
                             <img src="assets/svg/whatsapp.svg" alt="">
                         </a>
+                        <a href="#" class="black-button">
+                            Viber
+                            <img src="assets/svg/viber.svg" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1383,5 +1480,6 @@
     <script src="scripts/index.js"></script>
     <script src="scripts/cases.js"></script>
     <script src="scripts/scroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
 </html>

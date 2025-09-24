@@ -317,7 +317,7 @@
     gap: 60px
 
     @media screen and (max-width: 1152px)
-      padding: 60px 12px 52px
+      padding: 60px 12px 110px
 
     @media screen and (max-width: 960px)
       padding: 40px 15px 80px
@@ -449,8 +449,7 @@
         .delivery-type__block
           display: flex
           gap: 10px
-          width: 100%
-          max-width: 692px
+          width: calc(50% - 14px)
 
           padding: 28px 24px
           background: index.$white
@@ -458,6 +457,7 @@
 
           @media screen and (max-width: 960px)
             padding: 16px
+            width: 100%
 
             img
               max-width: 66px

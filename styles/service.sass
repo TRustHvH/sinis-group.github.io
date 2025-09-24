@@ -125,8 +125,15 @@
           max-width: 572px
           width: 100%
 
+          &.mobile
+            display: none
+
           @media screen and (max-width: 960px)
             gap: 12px
+            display: none
+
+            &.mobile
+              display: flex
 
           div
             display: flex

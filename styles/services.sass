@@ -41,11 +41,13 @@
 
     .services__item
       display: flex
-      gap: 28px
       align-items: center
 
+      &:nth-child(2n)
+        flex-direction: row-reverse
+
       @media screen and (max-width: 960px)
-        flex-direction: column
+        flex-direction: column!important
         gap: 8px
 
         .services__item-info
@@ -66,19 +68,15 @@
 
       .services__item-img
         position: relative
-        width: 706px
+        width: 50%
         height: 344px
-
-        @media screen and (max-width: 1152px)
-          width: 530px
-          height: 360px
 
         @media screen and (max-width: 960px)
           width: 100%
           height: 100%
 
           &:before
-            height: 98%!important
+            height: 99%!important
 
         img
           width: 100%
@@ -96,15 +94,15 @@
         flex-direction: column
         gap: 20px
 
+        width: 50%
+
+        padding: 0 28px
+
         max-width: 678px
 
-        @media screen and (max-width: 1366px)
-          &
-            max-width: 553px
-
-        @media screen and (max-width: 1152px)
-          &
-            max-width: 502px
+        @media screen and (max-width: 960px)
+          width: 100%
+          padding: 0
 
         h3
           @include index.sub-title

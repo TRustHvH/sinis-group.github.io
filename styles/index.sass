@@ -215,10 +215,14 @@ header
         @include text-18()
         line-height: 22px
         align-content: center
+        white-space: nowrap
 
         &:hover
           background: $main-color
 
+
+        @media screen and (max-width: 1300px)
+          padding: 10px
 
         @media screen and (max-width: 1152px)
           padding: 5px 10px
@@ -240,6 +244,7 @@ header
           font-weight: bold
           color: $white
           line-height: 22px
+          white-space: nowrap
 
           @media screen and (max-width: 1152px)
               font-size: 14px
@@ -346,6 +351,15 @@ footer
         color: $white
         line-height: 24px
 
+      .footer__info
+        display: flex
+        flex-direction: column
+        gap: 4px
+
+        a
+          @include text-16
+          color: $white
+
       .footer__logo
         display: flex
         align-items: flex-end
@@ -424,12 +438,19 @@ footer
     padding: 40px
 
     position: relative
+    overflow: auto
 
     @media screen and (max-width: 960px)
       padding: 60px 16px
 
       &:has(.call__form.disabled)
         padding: 16px
+
+    @media screen and (max-width: 768px)
+      max-width: 500px
+
+    @media screen and (max-width: 480px)
+      max-width: 350px
 
     .call__close
       position: absolute
@@ -557,6 +578,9 @@ footer
 
           @media screen and (max-width: 960px)
             gap: 4px
+
+          @media screen and (max-width: 480px)
+            flex-direction: column
 
           .black-button
             width: 100%
@@ -736,7 +760,7 @@ footer
     max-width: 1600px
     width: 100%
 
-    padding: 120px 94px
+    padding: 60px 94px 120px
 
     @media screen and (max-width: 1152px)
       padding: 60px 12px

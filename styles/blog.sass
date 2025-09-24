@@ -1,0 +1,372 @@
+@use 'index'
+
+// npx sass --watch styles/blog.sass css/blog.css
+
+.blog
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__container
+    padding: 40px 94px 100px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 52px
+
+    @media screen and (max-width: 1152px)
+      padding:  60px 12px 52px
+
+    @media screen and (max-width: 960px)
+      padding: 40px 15px
+
+    h1
+      color: index.$main-black
+      @include index.main-title
+
+      @media screen and (max-width: 960px)
+        text-align: center
+
+      @media screen and (max-width: 768px)
+        font-size: 30px
+
+    .blog__content
+      display: flex
+      flex-direction: column
+      gap: 28px
+      width: 100%
+
+      .content-pages
+        display: flex
+        flex-direction: column
+        gap: 28px
+        width: 100%
+
+        .swiper-wrapper
+          .page
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            gap: 28px
+            width: 100%
+
+            .pages__item
+              display: flex
+              flex-direction: column
+              gap: 20px
+              width: calc(33.3% - 19px)
+
+
+              @media screen and (max-width: 960px)
+                width: calc((100% / 2) - 14px)
+
+              @media screen and (max-width: 580px)
+                width: 100%
+
+              .item_image
+                position: relative
+                max-height: 255px
+
+                &:before
+                  @include index.linear-bg(270deg)
+
+                  @media screen and (max-width: 1390px)
+                    height: 98.5%
+
+                  @media screen and (max-width: 960px)
+                    height: 100%
+
+                  @media screen and (max-width: 830px)
+                    height: 98.5%
+
+                  @media screen and (max-width: 580px)
+                    height: 100%
+
+                @media screen and (max-width: 768px)
+                  max-height: 195px
+
+                img
+                  width: 100%
+                  height: 100%
+                  object-fit: cover
+                  max-height: 255px
+
+                  @media screen and (max-width: 768px)
+                    max-height: 195px
+
+              .item_info
+                display: flex
+                flex-direction: column
+                gap: 8px
+
+                .date
+                  @include index.text-16
+                  color: rgba(124, 130, 137, 1)
+                  line-height: 24px
+
+                  @media screen and (max-width: 768px)
+                    font-size: 14px
+
+                .title
+                  @include index.text-20
+                  color: index.$main-text
+                  line-height: 24px
+                  font-weight: 700
+
+                  @media screen and (max-width: 768px)
+                    font-size: 16px
+
+                .description
+                  @include index.text-16
+                  color: index.$main-text
+                  line-height: 24px
+
+                  @media screen and (max-width: 768px)
+                    font-size: 14px
+
+              button
+                display: none
+                width: 100%
+
+                @media screen and (max-width: 768px)
+                  display: flex
+                  justify-content: center
+
+          .swiper-slide
+            opacity: 0 !important
+            visibility: hidden
+            pointer-events: none
+
+
+          .swiper-slide-active
+            opacity: 1 !important
+            visibility: visible
+            pointer-events: auto
+
+      .blog-pagination
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 8px
+
+        .next-page, .prev-page, .page-numbers
+          position: relative
+          margin: 0
+          left: unset
+          right: unset
+          bottom: unset
+          top: unset
+          transition: .1s linear
+          border-radius: 50%
+          width: 51px
+          height: 51px
+          display: flex
+          justify-content: center
+          align-items: center
+
+        .next-page, .prev-page
+          background: rgba(23, 24, 25, 1)
+          color: #FFFFFF
+
+          svg
+            margin-left: 2px
+
+          &.disabled
+            opacity: .3
+
+        .prev-page
+          rotate: 180deg
+
+        .page-numbers
+          width: 51px
+          height: 51px
+          @include index.text-16
+          font-weight: 500
+          line-height: 19px
+          color: #FFFFFF
+          opacity: 1!important
+          background: index.$main-black!important
+
+          transition: .1s linear
+
+          &.current
+            background: index.$main-color!important
+
+
+
+.blog-single
+  display: flex
+  flex-direction: column
+  align-items: center
+  background: index.$main-bg
+
+  &__container
+    padding: 40px 94px 100px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 1600px
+    width: 100%
+    gap: 28px
+
+    @media screen and (max-width: 1152px)
+      padding:  60px 12px 52px
+
+    @media screen and (max-width: 960px)
+      padding: 40px 15px
+
+    .blog__title
+      display: flex
+      flex-direction: column
+      gap: 4px
+      width: 100%
+
+      h1
+        color: index.$main-black
+        line-height: 51px
+        @include index.main-title
+
+        @media screen and (max-width: 768px)
+          font-size: 30px
+
+      .date
+        @include index.text-20
+        line-height: 23px
+        color: rgba(124, 130, 137, 1)
+
+        @media screen and (max-width: 768px)
+          font-size: 16px
+
+    .blog__content
+      display: flex
+      flex-direction: column
+      gap: 28px
+
+      .block
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+        &__title
+          display: flex
+          flex-direction: column
+          gap: 8px
+
+          h2
+            @include index.sub-title
+            line-height: 37px
+
+            @media screen and (max-width: 768px)
+              font-size: 24px
+
+          .subtitle
+            @include index.text-24
+            line-height: 28px
+
+            @media screen and (max-width: 768px)
+              font-size: 22px
+
+        p
+          @include index.text-20
+          line-height: 23px
+
+          @media screen and (max-width: 768px)
+            font-size: 16px
+
+        ul, ol
+          display: flex
+          flex-direction: column
+          gap: 12px
+          color: index.$main-black
+          padding: 0 0 0 20px
+          margin: 0
+
+          li
+            @include index.text-20
+            line-height: 23px
+            display: list-item
+
+            @media screen and (max-width: 768px)
+              font-size: 16px
+
+        ul li
+          list-style-type: disc
+
+        ol li
+          list-style-type: decimal
+
+        .images
+          display: flex
+          justify-content: center
+          gap: 28px
+
+          @media screen and (max-width: 960px)
+            flex-direction: column
+
+          img
+            object-fit: cover
+
+            @media screen and (max-width: 960px)
+              width: 100% !important
+
+        .images:has(img:nth-child(3):last-child)
+          img
+            width: calc((100% / 3) - 19px)
+
+        .images:has(img:nth-child(4):last-child)
+          img
+            width: calc((100% / 4) - 21px)
+
+        .images:has(img:nth-child(2):last-child)
+          img
+            width: calc((100% / 2) - 14px)
+
+        .images:has(img:nth-child(1):last-child)
+          img
+            width: 50%
+
+    .other
+      display: flex
+      gap: 28px
+      width: 100%
+      margin-top: 12px
+
+      @media screen and (max-width: 768px)
+        flex-direction: column
+
+      a
+        width: 50%
+        padding: 20px
+        display: flex
+        flex-direction: column
+        gap: 12px
+        background: #FFFFFF
+
+        &:first-child
+          h2
+            svg
+              rotate: 180deg
+
+        h2
+          color: index.$main-black
+          display: flex
+          align-items: center
+          gap: 8px
+          @include index.text-24
+          font-weight: 400
+
+          svg
+            color: index.$main-color
+
+        p
+          @include index.text-16
+          font-weight: 500
+          color: index.$main-color
+          max-width: 500px
+
+        @media screen and (max-width: 768px)
+          width: 100%

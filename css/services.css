@@ -214,9 +214,15 @@ header .header__container .header__link-menu a {
   font-size: 18px;
   line-height: 22px;
   align-content: center;
+  white-space: nowrap;
 }
 header .header__container .header__link-menu a:hover {
   background: #E21F2F;
+}
+@media screen and (max-width: 1300px) {
+  header .header__container .header__link-menu a {
+    padding: 10px;
+  }
 }
 @media screen and (max-width: 1152px) {
   header .header__container .header__link-menu a {
@@ -241,6 +247,7 @@ header .header__container .header__call-me .header__call-me-phone-number p {
   font-weight: bold;
   color: #FFFFFF;
   line-height: 22px;
+  white-space: nowrap;
 }
 @media screen and (max-width: 1152px) {
   header .header__container .header__call-me .header__call-me-phone-number p {
@@ -356,6 +363,16 @@ footer .footer__container .footer__company-info .footer__name {
   color: #FFFFFF;
   line-height: 24px;
 }
+footer .footer__container .footer__company-info .footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+footer .footer__container .footer__company-info .footer__info a {
+  font-family: "AA Stetica", sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+}
 footer .footer__container .footer__company-info .footer__logo {
   display: flex;
   align-items: flex-end;
@@ -443,6 +460,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   background: #FFFFFF;
   padding: 40px;
   position: relative;
+  overflow: auto;
 }
 @media screen and (max-width: 960px) {
   .call .call__container {
@@ -450,6 +468,16 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   }
   .call .call__container:has(.call__form.disabled) {
     padding: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .call .call__container {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .call .call__container {
+    max-width: 350px;
   }
 }
 .call .call__container .call__close {
@@ -587,6 +615,11 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
 @media screen and (max-width: 960px) {
   .call .call__container .call__form .call__contacts div {
     gap: 4px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .call .call__container .call__form .call__contacts div {
+    flex-direction: column;
   }
 }
 .call .call__container .call__form .call__contacts div .black-button {
@@ -795,7 +828,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   gap: 29px;
   max-width: 1600px;
   width: 100%;
-  padding: 120px 94px;
+  padding: 60px 94px 120px;
 }
 @media screen and (max-width: 1152px) {
   .contacts__container {
@@ -1025,12 +1058,14 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
 }
 .services__container .services__item {
   display: flex;
-  gap: 28px;
   align-items: center;
+}
+.services__container .services__item:nth-child(2n) {
+  flex-direction: row-reverse;
 }
 @media screen and (max-width: 960px) {
   .services__container .services__item {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 8px;
   }
   .services__container .services__item .services__item-info {
@@ -1052,14 +1087,8 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
 }
 .services__container .services__item .services__item-img {
   position: relative;
-  width: 706px;
+  width: 50%;
   height: 344px;
-}
-@media screen and (max-width: 1152px) {
-  .services__container .services__item .services__item-img {
-    width: 530px;
-    height: 360px;
-  }
 }
 @media screen and (max-width: 960px) {
   .services__container .services__item .services__item-img {
@@ -1067,7 +1096,7 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
     height: 100%;
   }
   .services__container .services__item .services__item-img:before {
-    height: 98% !important;
+    height: 99% !important;
   }
 }
 .services__container .services__item .services__item-img img {
@@ -1093,16 +1122,14 @@ footer .footer__container .footer__social .footer__adm-data, footer .footer__con
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 50%;
+  padding: 0 28px;
   max-width: 678px;
 }
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 960px) {
   .services__container .services__item .services__item-info {
-    max-width: 553px;
-  }
-}
-@media screen and (max-width: 1152px) {
-  .services__container .services__item .services__item-info {
-    max-width: 502px;
+    width: 100%;
+    padding: 0;
   }
 }
 .services__container .services__item .services__item-info h3 {

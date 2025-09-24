@@ -91,6 +91,4 @@ $(function () {
     $('.faq__question').on('click', function () {
         $(this).closest('.faq__question').toggleClass('active');
     });
-
-
 });
